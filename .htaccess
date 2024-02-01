@@ -1,0 +1,8 @@
+RewriteEngine On
+#RewriteRule ^/job-alerts/(.\*)$ /job-alerts/public/$1 [R,L]
+RewriteCond %{QUERY_STRING} ^utm_source=InternalSignature
+RewriteRule ^(.*)$ https://www.vanderhouwen.com/job-alerts/public/$1 [R=301,L]
+RewriteCond %{REQUEST_URI} !^public
+RewriteRule ^(.*)$ https://www.vanderhouwen.com/job-alerts/public/$1 [L]
+#RewriteCond https://www.vanderhouwen.com/job-alerts/$
+#RewriteRule ^(.*)$ https://www.vanderhouwen.com/job-alerts/public/$1 [L]

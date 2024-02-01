@@ -1,0 +1,1 @@
+bash /volume2/web/staging/vdhlive/job-alerts/artisan schedule:run

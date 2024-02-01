@@ -1,0 +1,162 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+@font-face {
+  font-family: "Georgia Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Georgia Regular"), url("../fonts/georgia.woff") format("woff");
+}
+@font-face {
+  font-family: "Georgia Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Georgia Bold"), url("../fonts/georgiab.woff") format("woff");
+}
+.sharpspring_form .form_fields li label{ 
+  /* display: none; */
+  position: absolute;
+  top: 24px;
+  left: 25px;
+  margin-top: 0;
+  font-size: 16px;
+}
+.sharpspring_form .form_fields li.picklist  label{ display: none; }
+input, select, textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder { /* Edge */
+  color: #2d2d2d !important;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #2d2d2d  !important;
+}
+
+input::placeholder ,
+textarea::placeholder {
+  color: #2d2d2d  !important;
+}
+.sharpspring_form .form_fields li input {
+  padding: 17px 30px;
+  border-radius: 70px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  -ms-border-radius: 70px;
+  -o-border-radius: 70px;
+  border: 1px solid #ebebeb;
+  color: #2d2d2d;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  width: 100%;
+}
+.sharpspring_form .form_fields li input:focus,
+.sharpspring_form .form_fields li input.valid,
+.sharpspring_form .form_fields li textarea:focus,
+.sharpspring_form .form_fields li input.email.error,
+.sharpspring_form .form_fields li textarea.valid{ position: relative; z-index: 10;}
+.sharpspring_form .form_fields li{
+  display: flex !important;
+    flex-wrap: wrap;
+}
+.sharpspring_form .form_fields li label{
+  /* width: 100%; */
+  order: 1;
+}
+.sharpspring_form .form_fields li label.error{
+  order: 3;
+  position: static;
+  margin: 5px 0;
+  padding: 3px 20px;
+  border: 0;
+  box-shadow: inherit;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+.sharpspring_form .form_fields li  > div{  width: 100%; order: 2;}
+
+
+.sharpspring_form .form_fields li select {
+  padding: 20px 30px;
+  border-radius: 70px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  -ms-border-radius: 70px;
+  -o-border-radius: 70px;
+  border: 1px solid #ebebeb;
+  color: #2d2d2d;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+.sharpspring_form .form_fields li.picklist .field_value{ position: relative;}
+.sharpspring_form .form_fields li.picklist .field_value::before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  background-image: url(../../images/down_arrow.png);
+  width: 11px;
+  height: 6px;
+  z-index: 999;
+}
+
+.sharpspring_form .form_fields li textarea {
+  padding: 30px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border: 1px solid #ebebeb;
+  color: #2d2d2d;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  height: 120px;
+  padding: 10px 30px;
+  width: 100%;
+
+}
+
+.sharpspring_form button[type=submit] {
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ffffff;
+  background: #ea7600;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 0 70px;
+  line-height: 58px;
+  line-height: 3.625rem;
+  border: 0px solid transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  margin-top: 25px;
+  width: 100%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.sharpspring_form button[type=submit]:hover{
+  background: #000;
+  color: #ffffff;
+}

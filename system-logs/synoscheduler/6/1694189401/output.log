@@ -1,0 +1,1 @@
+[2023-09-08T16:10:02+00:00] Running scheduled command: ('/usr/bin/php' 'artisan' log:cron > '/dev/null' 2>&1 ; '/usr/bin/php' 'artisan' schedule:finish "framework/schedule-3788ae20a6df9b112e907f3752470003b42a9ae8" "$?") > '/dev/null' 2>&1 &

@@ -1,0 +1,1668 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/typography';
+@import 'libs/breakpoints';
+//@import 'font-awesome.min.css';
+
+// Page Styles
+@import "partials/_subscriberslist";
+@import "partials/_emailLogs";
+@import "partials/_frontpage";
+@import "partials/_thankyou";
+@import "partials/_categories";
+@import "partials/_dashboard";
+// @import "partials/notfound";
+// @import "partials/services";
+
+
+//@import "partials/_about";
+
+// Reset.
+body{
+	font-family: font(poppins, family);
+	color: color(primary, ptext);
+	background: color(secondary, body_bg) !important;
+}
+	html, body, div, span, applet, object,
+	iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+	pre, a, abbr, acronym, address, big, cite,
+	code, del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var, b,
+	u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+	form, label, legend, table, caption, tbody,
+	tfoot, thead, tr, th, td, article, aside,
+	canvas, details, embed, figure, figcaption,
+	footer, header, hgroup, menu, nav, output, ruby,
+	section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	ol, ul {
+		list-style:none;
+	}
+
+	blockquote,	q {
+		quotes: none;
+
+		&:before,
+		&:after {
+			content: '';
+			content: none;
+		}
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+	mark {
+		background-color: transparent;
+		color: inherit;
+	}
+
+
+	input::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+	input, select, textarea {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+	}
+
+
+
+	@-ms-viewport {
+		width: device-width;
+	}
+
+	// Set box model to border-box.
+	// Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+		html {box-sizing: border-box;}
+		*, *:before, *:after {box-sizing: inherit;}
+
+	body {
+		background: color(primary, white);
+	}
+
+	a {
+		text-decoration: none;
+	 &:hover{
+		 text-decoration: none;
+		}
+	}
+
+	em, i {font-style: italic;}
+
+	p {margin: 0 0 15px 0;}
+
+	sub {
+		@include font-size(12);
+		position: relative;
+		top: 0.5em;
+	}
+
+	sup {
+		@include font-size(12);
+		position: relative;
+		top: -0.5em;
+	}
+
+	hr {border: 0;}
+
+	blockquote {
+		border-left: solid 4px color(primary, ptext);
+		font-style: italic;
+		margin: 0 0 15px 0;
+		padding: 0.5em 0 0.5em 2em;
+	}
+
+	code {
+		background:color(primary, ptext);
+		border-radius: 3px;
+		font-family: font(poppins, family);
+		@include font-size(14);
+		letter-spacing: 0;
+		margin: 0 0.25em;
+		padding: 0.25em 0.65em;
+	}
+
+	pre {
+		-webkit-overflow-scrolling: touch;
+		font-family: font(poppins, family);
+		@include font-size(14);
+		margin: 0 0 15px 0;
+
+		code {
+			display: block;
+			line-height: 1.75em;
+			padding: 1em 1.5em;
+			overflow-x: auto;
+		}
+	}
+
+	.align-left {text-align: left;}
+	.align-center {text-align: center;}
+	.align-right {text-align: right;}
+
+	::-webkit-input-placeholder {
+		color: color(primary, ptext) !important;
+		opacity: .6;
+	}
+
+	:-moz-placeholder {
+		color: color(primary, ptext) !important;
+		opacity: .6;
+	}
+
+	::-moz-placeholder {
+		color: color(primary, ptext) !important;
+		opacity: .6;
+	}
+
+	:-ms-input-placeholder {
+		color:color(primary, ptext) !important;
+		opacity: .6;
+	}
+
+ol {
+	list-style: decimal;
+	margin: 0 0 15px 0;
+	padding-left: 0;
+
+	li {
+		padding-left: 0.25em;
+	}
+}
+
+ul {
+	list-style: disc;
+	margin: 0 0 15px 0;
+	padding-left: 0;
+
+	li {
+		padding-left: 0.5em;
+	}
+
+	&.alt {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			border-top: solid 1px color(primary, ptext);;
+			padding: 0.5em 0;
+
+			&:first-child {
+				border-top: 0;
+				padding-top: 0;
+			}
+		}
+	}
+}
+
+dl {
+	margin: 0 0 15px 0;
+}
+
+h1{
+	font-family: font(poppins, family);
+	@include font-size(82);
+	color: color(primary, white);
+	font-weight: font(poppins, weight-bold);
+
+	@include breakpoint(mobile-potrait){
+		@include font-size(38);
+	}
+	@include breakpoint(ipad-potrait){
+		@include font-size(52);
+	}
+	@include breakpoint(ipad-pro){
+		@include font-size(62);
+	}
+}
+h2{
+	font-family: font(poppins, family);
+	@include font-size(60);
+	line-height: normal;
+	color: color(primary, black);
+	margin-bottom: 12px;
+
+	@include breakpoint(mobile-potrait){
+		@include font-size(30);
+	}
+	@include breakpoint(ipad-potrait){
+		@include font-size(38);
+	}
+
+	@include breakpoint(ipad-pro){
+		@include font-size(40);
+		margin-bottom: 0;
+	}
+}
+h3{
+	font-family: font(poppins, family);
+	@include font-size(40);
+	line-height: normal;
+	color: color(primary, ptext);
+	margin-bottom: 20px;
+
+	@include breakpoint(mobile-potrait){
+		@include font-size(24);
+	}
+	@include breakpoint(ipad-potrait){
+		@include font-size(28);
+	}
+
+	@include breakpoint(ipad-pro){
+		@include font-size(30);
+	}
+}
+h4{
+	font-family: font(poppins, family);
+	@include font-size(25);
+	color: color(primary, ptext);
+	@include lineheight(24);
+	margin-bottom: 10px;
+	font-weight: font(poppins, weight-bold);
+
+	@include breakpoint(mobile-potrait){
+		@include font-size(21);
+	}
+	@include breakpoint(ipad-potrait){
+		@include font-size(25);
+	}
+}
+h5{
+	font-family: font(poppins, family);
+	@include font-size(26);
+	line-height: normal;
+
+	@include breakpoint(mobile-potrait){
+		@include font-size(22);
+	}
+	@include breakpoint(ipad-potrait){
+		@include font-size(20);
+	}
+}
+p{
+	font-family: font(poppins, family);
+	@include font-size(20);
+	font-weight: font(poppins, weight-regular);
+	@include lineheight(30);
+	color: color(primary, ptext);
+
+	strong {
+		font-weight: font(poppins, weight-bold);
+	}
+
+	@include breakpoint(mobile-potrait){
+		@include font-size(17);
+		@include lineheight(22);
+	}
+	@include breakpoint(ipad-potrait){
+		@include font-size(18);
+		@include lineheight(26);
+	}
+
+	@include breakpoint(ipad-pro){
+		@include font-size(19);
+	}
+}
+*:focus{ outline: none;}
+
+
+@media (min-width: 768px){
+	.navbar-toggler{ display: none !important;}
+}
+@media (min-width: 768px) and (max-width: 1365px){
+	.navbar-toggler{ display: none !important;}
+}
+
+//=============== ==============
+.container{ 
+	max-width: 1340px;
+}
+#app{
+	nav{
+		display: none;
+	}
+}
+.wellCome__page{
+	::-webkit-input-placeholder {
+		color: color(secondary, mainHeader_color) !important;
+		font-family: font(worksens, family);
+		font-weight: font(worksens, weight-regular);
+		@include font-size(16);
+	}
+
+	:-moz-placeholder {
+		color: color(secondary, mainHeader_color) !important;
+		font-family: font(worksens, family);
+		font-weight: font(worksens, weight-regular);
+		@include font-size(16);
+	}
+
+	::-moz-placeholder {
+		color: color(secondary, mainHeader_color) !important;
+		font-family: font(worksens, family);
+		font-weight: font(worksens, weight-regular);
+		@include font-size(16);
+	}
+
+	:-ms-input-placeholder {
+		color:color(secondary, mainHeader_color) !important;
+		font-family: font(worksens, family);
+		font-weight: font(worksens, weight-regular);
+		@include font-size(16);
+	}
+}
+
+.headGroupWrap{
+	position: relative;
+	background-color: color(secondary, titanWhite);
+	.siteHeader{
+		width: 100%;
+		z-index: 9;
+		.headerTop{
+			border-bottom: 1px solid color(secondary, lavendermist);
+			@include breakpoint(ipad-potrait){
+				border-bottom: 0px solid color(secondary, lavendermist);
+			}
+			ul{
+				padding: 10px 0px;
+				margin-bottom: 0px;
+				display: flex;
+				@include breakpoint(ipad-potrait){
+					padding: 20px 0px;
+				}
+				li{
+					list-style: none;
+					padding-right: 35px;
+					a{
+						@include font-size(16);
+						color: color(secondary, mainHeader_color);
+						font-family: font(worksens, family);
+						font-weight: font(worksens, weight-regular);
+						@include transition(all 0.3s ease-in-out);
+						i{
+							padding-right: 7px;
+							@include font-size(18);
+						}
+						&:hover{
+							color: color(primary, green);
+						}
+					}
+				}
+			}
+		}
+		.middleHeader{
+			padding-top: 20px;
+
+			@include breakpoint(uper-ipad){
+				.logo__sec{
+					position: absolute !important;
+					top: 15px !important;
+					background: #e6eaff;
+					left: 15px;
+				}
+				.main__nav__section{
+					width: 100% !important;
+					flex: 0 0 100% !important;
+					max-width: 100% !important;
+					background: #f5f5f5;
+					margin-top: 0;
+				}
+			}
+		}
+		.logo__sec{
+			@include breakpoint(ipad-potrait){
+				// margin-top: 0px;
+				// margin-bottom: 0;
+				// -webkit-box-flex: 0;
+				// -ms-flex: 0 0 33.333333%;
+				// flex: 0 0 33.333333%;
+				// max-width: 33.333333%;
+				position: absolute !important;
+				top: 15px !important;
+				background: #e6eaff;
+				left: 15px;
+				+ div{ 
+					// padding: 0;
+					// -webkit-box-flex: 0;
+					// -ms-flex: 0 0 66.666667%;
+					// flex: 0 0 66.666667%;
+					// max-width: 66.666667%;
+					width: 100% !important;
+					flex: 0 0 100% !important;
+					max-width: 100% !important;
+					background: #f5f5f5;
+					margin-top: 0;
+				}
+			}
+
+			img {
+				max-width: inherit;
+				@include breakpoint(ipad-potrait){
+					max-width: 100%;
+					height: auto;
+				}
+				@include breakpoint(mobiles-potrait){
+					max-width: 70%;
+				}
+			}
+
+			a:first-child {
+				@include breakpoint(ipad-potrait){
+					margin: 0 auto;
+				}
+			}
+			
+			@media screen and (max-width: 767px){
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				a:last-child {
+				  display: inline-block !important;
+				}
+				img{
+					max-width: 90%;
+					height: auto;
+				}
+
+				//========= hamburget Style start
+				.navbar-toggler span {
+					display: block;
+					background-color: color(primary, ptext);
+					height: 3px;
+					width: 25px;
+					margin-top: 5px;
+					margin-bottom: 5px;
+					position: relative;
+					left: 0;
+					opacity: 1;
+					transition: all 0.35s ease-out;
+					transform-origin: center left;
+				}
+				.navbar-toggler{
+					span:nth-child(1) {
+						margin-top: 0.3em;	
+					}
+				} 
+				.navbar-toggler:not(.collapsed){
+					span:nth-child(1) {
+						transform: translate(15%, -33%) rotate(45deg);
+					}
+				}
+				.navbar-toggler:not(.collapsed){
+					span:nth-child(2) {
+						opacity: 0;
+					}
+				} 
+				.navbar-toggler:not(.collapsed){
+					span:nth-child(3) {
+						transform: translate(15%, 33%) rotate(-45deg) ;
+					}
+				} 
+				.navbar-toggler{
+					span:nth-child(1) {
+						transform: translate(0%, 0%) rotate(0deg) ;
+					}
+				} 
+				.navbar-toggler{
+					span:nth-child(2) {
+						opacity: 1;
+					}
+				} 
+				.navbar-toggler{
+					span:nth-child(3) {
+						transform: translate(0%, 0%) rotate(0deg) ;}
+				} 
+				// ========= hamburget Style End
+
+			}
+			@include breakpoint(ipad-pro){
+				img{
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		.main_nav_sec{
+			width: 100%;
+			text-align: right;
+			padding: 0;			
+			ul{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				justify-content: flex-end;
+
+				li{
+					list-style-type: none;
+					display: inline-block;
+					font-family: font(worksens, family);
+					@include font-size(18);
+					font-weight: font(worksens, weight-medium);
+					padding: 4px 7px;
+
+					@include breakpoint(ipad-pro){
+						padding: 0 5px;
+					}
+
+					a {
+						padding: 0 8px;
+						color:color(secondary, mainHeader_color);
+						display: block;
+						@include lineheight(45);
+						font-weight: font(worksens, weight-medium);
+
+						@include breakpoint(mobile-potrait){
+							text-align: left;
+							font-size: 15px;
+						}
+
+						@include breakpoint(ipad-landscape){
+							@include font-size(16);
+							padding: 0 6px;
+						}
+					}
+					a:hover, &.current-menu-item a{
+						color:color(primary, green);
+					}
+					
+				}
+
+				.lastchild {
+					a {
+						@include buttonCommon;
+						margin-top: 0;
+						padding: 3px 30px;
+						color:color(primary, white) !important;
+						background: color(primary, green);
+						@include lineheight(45);
+						@include font-size(16);
+
+						@include breakpoint(ipad-landscape){
+							@include font-size(16);
+							padding: 0 14px;
+						}
+						@include breakpoint(ipad-potrait){
+							padding: 0px 17px;
+							@include lineheight(34);
+
+						}
+
+					}					
+				}
+			}
+
+			@include breakpoint(mobile-potrait){
+				order: 1;
+				justify-content: flex-end;
+				ul{
+					li{
+						border-top: 1px solid lighten(color(primary, ptext), 60%);
+						@include font-size(17);
+						padding: 4px 10px;
+						width: 100%;
+					}
+					.lastchild {
+						text-align: center;
+						a {		
+							padding: 0px 25px;
+							margin-left: 0;
+							margin-bottom: 15px;
+							width: 100%;
+							border-radius: 0;
+							text-align: center;
+						}
+					}
+				}
+				.navbar-collapse{
+					position: absolute;
+					right: 0px;
+					top: calc(100% + 14px);
+					z-index: 500;
+					width: 100%;
+					background: #FFF;
+					@include radius(5px);
+					//@include radius(3px);
+					@include shadow(1px 8px 6px lighten(color(primary, ptext), 20%));
+					margin-top: 2%;
+					@include breakpoint(ipad-potrait){
+						position: static;
+					}
+				}
+			}
+
+			@include breakpoint(ipad-potrait){
+				order: 1;
+				justify-content: flex-end;
+				ul{
+					justify-content: center;
+					margin-left: -5px;
+					text-align: center;
+					li{						
+						@include font-size(17);
+						padding: 4px 1px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						a {
+							padding: 0 5px;
+						}
+					}
+
+					.lastchild {
+						a {		
+							padding: 0px 17px;
+						}
+					}
+				}
+				
+			}
+		}		
+	}
+
+	.siteBanner{
+		 > .container > .row{
+			 background: url(../../theme/dist/img/wellCome-page-header-bg.png) no-repeat right top;
+		 }
+		.bannerText__box{
+			@include breakpoint(ipad-landscape){
+				padding-left: 1.5rem;
+			}
+			
+			h1{
+				@include font-size(85);
+				@include lineheight(82);
+				color: color(secondary, mainHeader_color);
+				text-transform: uppercase;
+				margin-bottom: 15px;
+				//text-shadow: 2px -1px 2px rgba(0,0,0,0.6);
+				@include breakpoint(laptop-small){
+					@include font-size(70);
+					@include lineheight(67);
+					margin-top: 50px;
+				}
+				@include breakpoint(ipad-landscape){
+					@include font-size(55);
+					@include lineheight(52);
+					margin-top: 30px;
+				}
+				@include breakpoint(ipad-potrait){
+					@include font-size(42);
+					@include lineheight(40);
+					margin-top: 30px;
+					text-align: center;
+				}
+				@include breakpoint(mobile-potrait){
+					@include font-size(36);
+					@include lineheight(32);
+					margin-top: 50px;
+					text-align: center
+				}
+				@include breakpoint(mobiles-potrait){
+					@include font-size(32);
+					@include lineheight(32);
+					margin-top: 50px;
+				}
+			}
+			P{
+				@include font-size(24);
+				@include lineheight(31);
+				color: color(secondary, mainHeader_color);
+				font-family: font(worksens, family);
+				font-weight: font(worksens, weight-regular);
+				@include breakpoint(ipad-potrait){
+					text-align: center;
+				}
+				@include breakpoint(mobile-potrait){
+					@include font-size(20);
+					@include lineheight(27);
+					text-align: center
+				}
+			}
+		}
+		.bannerForm{
+			background-image: url(./theme/dist/img/wellCome-page-header-bg.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@include breakpoint(mobile-landscapes){
+				padding: 0px 30px;	
+			}
+			@include breakpoint(smal-mobile){
+				padding: 0px 30px;	
+			}
+			@include breakpoint(very-smal-mobile){
+				padding: 0px 15px;	
+			}
+			@include breakpoint(very-smal-mobiles){
+				padding: 0px 5px;
+			}
+			.card{
+				@include radius(30px);
+				margin-top: 50px;
+				margin-bottom: 50px;
+				@include breakpoint(ipad-potrait){
+					margin-top: 20px;
+					max-width: 600px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				@include breakpoint(mobile-potrait){
+					margin-top: 20px;
+				}
+				@include breakpoint(mobile-landscapes){
+					
+				}
+				.card-header{
+					border-bottom: 0px;
+					padding: 50px 50px 0px 50px;
+					@include breakpoint(ipad-landscape){
+						padding: 30px 30px 0px 30px;
+					}
+					@include breakpoint(ipad-potrait){
+						padding: 30px 30px 0px 30px;
+					}
+					@include breakpoint(mobile-potrait){
+						padding: 30px 20px 0px 20px;
+					}
+					h4{
+						@include font-size(40);
+						@include lineheight(50);
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-semibold);
+						color: color(secondary, lightblackrussian);
+						text-transform: capitalize;
+						margin-bottom: 0px;
+						@include breakpoint(ipad-landscape){
+							@include font-size(36);
+							//@include lineheight(70);
+						}
+						@include breakpoint(ipad-potrait){
+							text-align: center;
+						}
+						@include breakpoint(mobile-potrait){
+							@include font-size(32);
+							@include lineheight(32);
+							text-align: center;
+							//margin-bottom: 15px;
+						}
+					}
+				}
+				form{
+					.card-body{
+						padding: 0px 50px 0px 50px;
+						@include breakpoint(ipad-landscape){
+							padding: 30px 30px 0px 30px;
+						}
+						@include breakpoint(ipad-potrait){
+							padding: 10px 30px 0px 30px;
+						}
+						@include breakpoint(mobile-potrait){
+							padding: 15px 20px 0px 20px;
+						}					
+						.form-group{
+							position: relative;
+							display: flex;
+							align-items: center;
+							margin-bottom: 12px;
+							.inputFeild__icons{
+								position: absolute;
+								top: 18px;
+								left: 22px;
+								z-index: 999;
+								@include breakpoint(smal-mobile){
+									top: 11px;
+									left: 18px;
+								}
+								@include breakpoint(iphone-x5){
+									top: 11px;
+									left: 18px;
+								}
+								i{
+									@include font-size(20);
+									color: color(primary, login_header);
+									padding-right: 6px;
+									//border-right: 1px solid color(primary, login_header);
+								}
+							}
+							input{
+								padding: 27px 0px 27px 50px;
+								border-radius: 30px;
+								border-color: 1px solid color(primary, login_header) !important;
+								position: relative;
+								z-index: 999;
+								font-family: font(poppins, family);
+								font-weight: font(poppins, weight-light);
+								@include breakpoint(mobile-landscapes){
+									padding: 25px 0px 25px 50px;	
+								}
+								@include breakpoint(smal-mobile){
+									padding: 24px 0px 24px 50px;
+								}
+								@include breakpoint(iphone-x5){
+									padding: 20px 0px 20px 50px;
+								}
+							}
+							input.form-control:focus{
+								box-shadow: none;
+								border-color: 1px solid color(primary, login_header) !important;
+							}
+						}
+						.form-check{
+							margin-top: 7px;
+							padding-left: 0px;
+							.form-check-label{
+								@include font-size(16);
+								@include lineheight(31);
+								font-family: font(worksens, family);
+								font-weight: font(worksens, weight-regular);
+								color: color(secondary, lightblackrussian);
+								position: relative;								
+								&::before{
+									content:'';
+									-webkit-appearance: none;
+									background-color: transparent;
+									border: 1px solid color(secondary, lightblackrussian);
+									@include radius(5px);
+									//border-radius: 5px;
+									box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+									//padding: 8px;
+									height: 24px;
+									width: 24px;
+									margin-right: 8px;
+									display: inline-block;
+									position: relative;
+									vertical-align: middle;
+									cursor: pointer;
+									z-index: 999;
+								}
+							}
+							input:checked + label:after {
+								content: '';
+								display: block;
+								position: absolute;
+								top: 9px;
+								left: 4px;
+								width: 16px;
+								height: 16px;
+								background-color: color(secondary, lightblackrussian);
+								//border-radius: 4px;
+								@include radius(4px);
+								//border: solid color(primary, green);
+								//border-width: 0 2px 2px 0;
+								//transform: rotate(45deg);
+							}
+							
+							@include breakpoint(ipad-potrait){
+								margin-top: 10px;
+								.form-check-label{
+									@include font-size(15);
+								}
+							}
+							@include breakpoint(mobile-landscapes){
+								margin-top: 7px;
+								.form-check-label{
+									@include font-size(13);
+								}
+							}
+							@include breakpoint(smal-mobile){
+								margin-top: 7px;
+								.form-check-label{
+									@include font-size(14);
+								}
+							}
+							@include breakpoint(very-smal-mobiles){
+								margin-top: 5px;
+								.form-check-label{
+									@include font-size(12);
+									@include lineheight(25);
+								}
+							}
+						}					
+					}
+					.card-footer{
+						background: transparent;
+						padding: 0px 50px 50px 50px;
+						margin-top: 10px;
+						@include breakpoint(ipad-landscape){
+							padding: 0px 30px 30px 30px;
+						}
+						@include breakpoint(ipad-potrait){
+							padding: 0px 30px 30px 30px;
+						}
+						@include breakpoint(mobile-potrait){
+							padding: 0px 20px 30px 20px;
+						}	
+						button{
+							@include buttonCommon;
+							width: 100%;
+							color: color(primary, white);
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+//========= @Login Form Start ==============
+	.logo__section{
+		padding: 70px 0px;
+		@include breakpoint(smal-mobile){
+			padding: 30px 0px;
+		}
+	}
+	.loginForm{
+		.imgBox{
+			margin-right: -95px;
+			margin-bottom: -100px;
+			z-index: 99;
+			@include breakpoint(laptop-small){
+				margin-right: -95px;
+				margin-bottom: -75px;
+			}
+			@include breakpoint(ipad-landscape){
+				margin-right: -6%;
+				margin-bottom: -75px;
+			}
+			@include breakpoint(ipad-potrait){
+				margin-right: -10%;
+				margin-bottom: -75px;
+			}
+			@include breakpoint(mobile-landscapes){
+				margin-right: -10%;
+				margin-bottom: -110px;
+			}
+			@include breakpoint(smal-mobile){
+				display: none;
+			}
+		}
+	}
+	.changePassword_form{
+		.imgBox{
+			margin-right: -3%;
+			margin-bottom: -80px;
+			z-index: 99;
+			@include breakpoint(laptop-small){
+				margin-right: -3%;
+			}
+			@include breakpoint(ipad-landscape){
+				margin-right: -4%;
+			}
+			@include breakpoint(ipad-potrait){
+				margin-right: -5%;
+			}
+			@include breakpoint(mobile-landscapes){
+				margin-right: -4%;
+			}
+			@include breakpoint(smal-mobile){
+				display: none;
+			}
+		}
+	}
+	.forgotForm{
+		.imgBox{
+			margin-right: -3%;
+			//border-bottom: 1px solid color(primary, login_header);
+			z-index: 99;
+			position: relative;
+			&::after{
+				content: '';
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				width: calc(100% - 4%);
+				height: 2px;
+				background-color: color(primary, login_header);
+			}
+			@include breakpoint(laptop-small){
+				margin-right: -3%;
+				&::after{
+					width: calc(100% - 4%);
+				}
+			}
+			@include breakpoint(ipad-landscape){
+				margin-right: -3%;
+				&::after{
+					width: calc(100% - 4%);
+				}
+			}
+			@include breakpoint(ipad-potrait){
+				margin-right: -5%;
+				&::after{
+					width: calc(100% - 10%);
+				}
+			}
+			@include breakpoint(mobile-landscapes){
+				margin-right: -5%;
+				&::after{
+					width: calc(100% - 6%);
+				}
+			}
+			@include breakpoint(smal-mobile){
+				display: none;
+			}
+		}
+	}
+	
+	.formGroup__section{
+		@include breakpoint(smal-mobile){
+			padding: 0px 40px;
+		}
+		@include breakpoint(iphone-x5){
+			padding: 0px 20px;
+		}
+		.card{
+			border: none !important;
+			background-color: color(primary, white);
+			//@include radius(20px);
+			border-radius: 30px !important;
+			padding: 50px 0px;
+			box-shadow: 10px 10px 30px #C5C8D4;
+			@include breakpoint(mobile-landscapes){
+				padding: 30px 0px;
+			}
+			@include breakpoint(smal-mobile){
+				padding: 30px 0px;
+			}
+			@include breakpoint(iphone-x5){
+				box-shadow: none;
+			}
+			.card-header{
+				background-color: color(primary, white);
+				border: none;
+				padding: 0px;
+				padding: 0px 20px;
+				h2{
+					@include font-size(32);
+					@include lineheight(48);
+					color: color(primary, login_header);
+					font-family: font(poppins, family);
+					font-weight: font(poppins, weight-medium);
+					text-transform: capitalize;
+					margin-bottom: 0px;
+				}
+				p{
+					@include font-size(14);
+					@include lineheight(21);
+					color: color(primary, login_header);
+					font-family: font(poppins, family);
+					font-weight: font(poppins, weight-light);
+					margin-bottom: 20px;
+				}
+				@include breakpoint(ipad-potrait){
+					padding: 0px 30px;
+					h2{
+						@include font-size(30);
+						@include lineheight(42);
+					}
+				}
+				@include breakpoint(mobile-landscapes){
+					padding: 0px 20px;
+					h2{
+						@include font-size(26);
+						@include lineheight(36);
+					}
+				}
+				@include breakpoint(very-smal-mobiles){
+					padding: 0px 20px;
+					h2{
+						@include font-size(26);
+					}
+				}
+			}
+			.card-body{
+				padding: 0px 40px;
+				@include breakpoint(ipad-potrait){
+					padding: 0px 20px;
+				}
+				@include breakpoint(mobile-landscapes){
+					padding: 0px 15px;
+				}
+				@include breakpoint(smal-mobile){
+					padding: 0px 15px;
+				}
+				form{
+					.form-group{
+						position: relative;
+						display: flex;
+ 						align-items: center;
+						.inputFeild__icons{
+							position: absolute;
+							top: 16px;
+							left: 15px;
+							z-index: 999;
+							i{
+								@include font-size(20);
+								color: color(primary, login_header);
+								padding-right: 8px;
+								border-right: 1px solid color(primary, login_header);
+							}
+						}
+						input{
+							padding: 25px 0px 25px 70px;
+							border-radius: 30px;
+							border-color: 1px solid color(primary, login_header) !important;
+							position: relative;
+							z-index: 999;
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							@include breakpoint(smal-mobile){
+								padding: 24px 0px 24px 70px;
+							}
+						}
+						input.form-control:focus{
+							box-shadow: none;
+							border-color: 1px solid color(primary, login_header) !important;
+						}
+					}
+					.form-check{
+						margin-top: 30px;
+						padding-left: 0px;
+						.form-check-label{
+							@include font-size(16);
+							@include lineheight(24);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							color: #BEBEBE;
+							position: relative;
+							&::before{
+								content:'';
+								-webkit-appearance: none;
+								background-color: transparent;
+								border: 2px solid color(primary, green);
+								border-radius: 50%;
+								box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+								padding: 8px;
+								display: inline-block;
+								position: relative;
+								vertical-align: middle;
+								cursor: pointer;
+								z-index: 999;
+							}
+						}
+						input:checked + label:after {
+							content: '';
+							display: block;
+							position: absolute;
+							top: 7px;
+							left: 7px;
+							width: 6px;
+							height: 10px;
+							border: solid color(primary, green);
+							border-width: 0 2px 2px 0;
+							transform: rotate(45deg);
+						  }
+						@include breakpoint(ipad-potrait){
+							margin-top: 20px;
+							.form-check-label{
+								@include font-size(13);
+							}
+						}
+						@include breakpoint(mobile-landscapes){
+							margin-top: 20px;
+							.form-check-label{
+								@include font-size(12);
+							}
+						}
+						@include breakpoint(iphone-x5){
+							margin-top: 25px;
+							.form-check-label{
+								@include font-size(13);
+							}
+						}
+					}
+					.forget-group{
+						margin-top: 30px;
+						.btn_link{
+							@include font-size(16);
+							@include lineheight(24);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							color: color(primary, login_header);
+							text-decoration: underline;
+						}
+						@include breakpoint(ipad-potrait){
+							margin-top: 20px;
+							.btn_link{
+								@include font-size(13);
+							}
+						}
+						@include breakpoint(mobile-landscapes){
+							margin-top: 20px;
+							.btn_link{
+								@include font-size(12);
+							}
+						}
+						@include breakpoint(iphone-x5){
+							margin-top: 25px;
+							.btn_link{
+								@include font-size(13);
+							}
+						}
+						
+					}
+					.bgn__group{
+						button{
+							@include buttonCommon;
+							width: 100%;
+							color: color(primary, white);
+						}
+					}
+				}
+				.content__section{
+					padding-top: 30px;
+					p{
+						@include font-size(16);
+						@include lineheight(24);						
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-light);
+						color: #BEBEBE;
+						a{
+							color: color(primary, login_header);
+							text-decoration: underline;
+							@include lineheight(24);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							padding-left: 10px;
+						}
+						@include breakpoint(mobile-landscapes){
+							@include font-size(14);
+						}
+						@include breakpoint(mobile-potrait){
+							@include font-size(14);
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+//==============@footer section=========================
+.loginForm__page{
+	width: 100%;
+	padding-bottom: 50px;
+	min-height: calc(100vh - 71px);
+	overflow-y: auto;
+	//position: relative;
+	// .footer__section{
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 0;
+	// }
+	// @include breakpoint(ipad-landscape){
+	// 	min-height: 113vh;
+	// }
+}
+.password_changeForm__page{
+	width: 100%;
+	padding-bottom: 50px;
+	min-height: calc(100vh - 71px);
+	overflow-y: auto;
+	// .footer__section{
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	@include breakpoint(smal-mobile){
+	// 		position: static;
+	// 		margin-top: 40px;
+	// 	}
+	// 	@include breakpoint(iphone-x5){
+	// 		margin-top: 20px;
+	// 	}
+	// }
+	// @include breakpoint(ipad-landscape){
+	// 	min-height: 140vh;
+	// }
+}
+
+.forgotForm__page{
+	width: 100%;
+	padding-bottom: 50px;
+	min-height: calc(100vh - 71px);
+	overflow-y: auto;
+	h2{
+		line-height: normal !important;
+	}
+	// .footer__section{
+		
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	@include breakpoint(smal-mobile){
+	// 		position: static;
+	// 		margin-top: 40px;
+	// 	}
+	// 	@include breakpoint(smal-mobile){
+	// 		position: static;
+	// 		margin-top: 40px;
+	// 	}
+	// 	@include breakpoint(iphone-x5){
+	// 		margin-top: 20px;
+	// 	}
+	// }
+	// @include breakpoint(ipad-landscape){
+	// 	min-height: 113vh;
+	// }
+}
+
+.footer__section{
+	padding: 25px 20px;
+	background-color: #12162B;
+	width: 100%;
+	@include breakpoint(iphone-x5){
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}	
+	p{
+		margin-bottom: 0px;
+		@include font-size(14);
+		line-height: normal;						
+		font-family: font(poppins, family);
+		font-weight: font(poppins, weight-light);
+		color: #585D7B;
+		a{
+			color: #a7a8b0;
+		}
+	}
+}
+
+
+//==============@footer section=========================
+
+.siteFooter{
+	background-color: color(primary, blackrussian);	
+	.footerLogo {
+		display: inline-block;
+		img {
+			@include radius(30px);
+			@include shadow(1px 0 9px lighten(color(primary, ptext), 40%));
+		}
+	}
+	.siteFooter__top {	
+		padding: 70px 0px;
+		@include breakpoint(mobile-potrait){
+			padding: 50px 0 10px;
+		}
+		@include breakpoint(ipad-potrait){
+			padding: 80px 0 10px;
+		}
+		h5{
+			@include font-size(18);
+			@include lineheight(18);
+			color: color(primary, white);
+			font-weight: font(worksens, weight-semibold);
+			font-family: font(worksens, family);
+		}		
+		p {
+			@include font-size(15);
+			@include lineheight(20);
+			color: color(secondary, titanWhite);
+			margin-top: 20px;
+			font-weight: font(worksens, weight-regular);
+			font-family: font(worksens, family);
+		}
+		ul {
+			margin-top: 20px;
+			padding: 0;
+			li {
+				list-style-type: none;
+				a {
+					color: color(secondary, titanWhite);
+					@include font-size(15);
+					@include lineheight(26);
+					font-weight: font(worksens, weight-regular);
+					font-family: font(worksens, family);
+					@include transition(all 0.3s ease-in-out);
+					&:hover{
+						color: color(primary, green);
+					}
+				}
+			}
+		}
+		.location-social-icons{
+			.location{
+				li{
+					i{
+						padding-right: 15px;
+						@include font-size(25);
+						color: color(secondary, titanWhite);
+						display: flex;
+						align-items: center;
+					}
+					p{
+						@include font-size(15);
+						line-height: normal;
+						color: color(secondary, titanWhite);
+						margin-top: 20px;
+						margin-top: 0px !important;
+						margin-bottom: 0px;
+					}
+				}
+				.ph-no{
+					margin-top: 20px;
+					a{
+						display: flex;
+						color: color(secondary, titanWhite);
+						@include transition(all 0.3s ease-in-out);
+						i{
+							padding-right: 15px;
+							@include font-size(25);
+						}
+						&:hover{
+							color: color(primary, green) !important;
+						}
+					}
+				}
+			}
+			.social-icons{
+				li{					
+					a{
+						height: 45px;
+						width: 45px;
+						background-color: color(primary, lightblackrussian);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border-radius: 50%;
+						@include transition(all 1000ms ease-in-out);
+						i{
+							@include font-size(18);
+							color: color(primary, white);
+						}
+						&:hover{
+							background-color: color(primary, white);
+							i{
+								color: color(button, icon_hover_color);
+							}
+						}
+					}
+				}
+			}
+		}		
+	}	
+
+	.siteFooter__copytxt {
+		background-color: color(primary, blackrussian);	
+		font-family: font(poppins, family);
+		border-top: 1px solid color(primary, ptext);
+		padding: 20px 0;
+
+		@include breakpoint(mobile-potrait){
+			padding: 25px 15px;
+		}
+		@include breakpoint(ipad-potrait){
+			padding: 20px 15px;
+		}
+
+		p {
+			//color: lighten(color(primary, ptext), 30%);
+			@include font-size(16);
+			color: color(secondary, titanWhite);
+			margin: 0;
+			a {
+				color: color(secondary, lightGray);
+				@include font-size(16);
+	
+				@include breakpoint(mobile-potrait){
+					@include font-size(14);
+				}
+				@include breakpoint(ipad-potrait){
+					@include font-size(15);
+				}
+				&:hover {color: color(primary, green);}
+			}
+		}
+	}
+}
+
+@include breakpoint(ipad-potrait){
+	.siteFooter{
+		.siteFooter__top{
+			// p {
+			// 	margin-top: 10px;
+			// }
+			// h5{
+			// 	margin-top: 25px;
+			// }
+			// ul{
+			// 	margin-top: 10px;
+			// }
+			.location-social-icons{
+				.social-icons{
+					li{					
+						a{
+							height: 30px;
+							width: 30px;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							i{
+								@include font-size(15);
+							}
+						}
+					}
+				}
+			}
+		}
+		.siteFooter__copytxt{
+			padding: 15px;
+		}
+	}
+}
+
+@include breakpoint(mobile-landscape){
+	.siteFooter{
+		.siteFooter__top{
+			p {
+				margin-top: 10px;
+			}
+			h5{
+				margin-top: 25px;
+			}
+			ul{
+				margin-top: 10px;
+			}
+			.location-social-icons{
+				.social-icons{
+					li{					
+						a{
+							height: 30px;
+							width: 30px;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							i{
+								@include font-size(15);
+							}
+						}
+					}
+				}
+			}
+		}
+		.siteFooter__copytxt{
+			padding: 15px;
+		}
+	}
+}
+@include breakpoint(mobiles-potrait){
+	.siteFooter{
+		.siteFooter__top{
+			p {
+				margin-top: 10px;
+			}
+			h5{
+				margin-top: 25px;
+			}
+			ul{
+				margin-top: 10px;
+				margin-bottom: 0px;
+			}
+			.location-social-icons{
+				margin-bottom: 20px;
+				.location{
+					li{
+						i{
+							padding-right: 10px;
+							@include font-size(20);
+							color: color(primary, whitesmoke);
+							display: flex;
+							align-items: center;
+						}
+						
+					}
+					.ph-no{
+						margin-top: 10px;
+						a{
+							display: flex;
+							color: color(primary, whitesmoke);
+							@include transition(all 0.3s ease-in-out);
+							i{
+								padding-right: 10px;
+								@include font-size(20);
+							}
+							&:hover{
+								color: color(primary, green) !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		.siteFooter__copytxt{
+			padding: 15px;
+		}
+	}
+}
+
+

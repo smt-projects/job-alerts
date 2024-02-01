@@ -1,0 +1,113 @@
+//@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+
+// @font-face {
+//   font-family: 'Georgia Regular';
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local('Georgia Regular'), url('../fonts/georgia.woff') format('woff');
+// }
+  
+// @font-face {
+//   font-family: 'Georgia Bold';
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local('Georgia Bold'), url('../fonts/georgiab.woff') format('woff');
+// }
+
+// Font.
+	$fonts: (
+    // georgia: (
+		// 	family:	('Georgia Bold'),
+		// ),
+
+    // georgiaregular: (
+		// 	family:	('Georgia Regular'),
+		// ),
+
+    // sourcesanspro: (
+		// 	family:	('Source Sans Pro', sans-serif),
+    //   weight-extralight:	200,
+    //   weight-light:	300,	
+    //   weight-regular:	400,	
+    //   weight-semibold: 600,
+		// 	weight-bold: 700,
+    //   weight-black: 900
+		// ),
+    worksens: (
+			family:	('Work Sans', sans-serif),
+      weight-extralight:	200,
+      weight-light:	300,	
+      weight-regular:	400,
+      weight-medium:	500,	
+      weight-semibold: 600,
+			weight-bold: 700,
+      weight-black: 900
+		),
+    poppins: (
+			family:	('Poppins', sans-serif),
+      weight-extralight:	200,
+      weight-light:	300,	
+      weight-regular:	400,
+      weight-medium:	500,	
+      weight-semibold: 600,
+			weight-bold: 700,
+      weight-black: 900
+		)
+		
+	);
+
+// Palette.
+$colors: (
+  // nested map inception
+  primary: (
+	  white: #ffffff,
+    black: #000000,
+    lightblack: #323638,
+    lightgrey: #f7f7f7,
+    blue: #179bd7,
+    orange: #ea7600,
+    login_header: #252F6A,
+    green: #99C24D,
+    lacquered_licorice: #373737,
+    carbon_fiber: #2E2E2E,
+    blackrussian: #12162b,
+    lightblackrussian: #1d223c,
+    yellow: #EFC10C,
+
+
+
+    ptext: #616161,
+    darkgrey: #2d2d2d,
+    //grey: #ebebeb,
+    bnrBlue:#09419f, 
+  ),
+  secondary: (
+    grey: #e1e1e1,
+    smoke_color: #f8f9fa,
+    body_bg: #fafaff,
+    light_black: #3f3f3f,
+    lightblackrussian: #1c2763,
+    dataTable_btnColor: #252F6A,
+    tableText__color: #2B3743,
+    titanWhite: #e6eaff,
+    lightGray: #bbc0d7,
+    cardtext: #575757,
+    mainHeader_color: #28326c,
+    lavendermist: #dcddf6,
+    thankyou_pageBody_color: #efeeff,
+  ),
+  button: (
+    bg:#ea7600,
+    color:#ffffff,
+    border:	transparent,
+    bghover:#000,
+    deactiveBtn_bg: #C24D4D,
+    csv_excle_btnColor: #1C8C89,
+    icon_hover_color: #183153,
+    blue: #0000ef,
+    switch_incative_bg: #5C5C5C,
+  ),
+);

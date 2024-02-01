@@ -1,0 +1,318 @@
+
+.category__header{
+	@include breakpoint(very-smal-mobiles){
+		padding: 15px 0px;
+	} 
+    h1{
+		@include font-size(30);
+		@include lineheight(45);
+		color: color(primary, black);
+		font-family: font(poppins, family);
+		font-weight: font(poppins, weight-medium);
+		text-transform: capitalize;
+		margin-bottom: 0px;
+		text-align: left;
+		@include breakpoint(mobile-potrait){
+			@include font-size(22);
+			@include lineheight(28);
+		}
+		@include breakpoint(very-smal-mobiles){
+			@include font-size(18);
+			@include lineheight(25);
+		}
+	}
+	.breadcrumb{
+		li{
+			@include font-size(14);
+			@include lineheight(21);
+			color: color(primary, black);
+			font-family: font(poppins, family);
+			font-weight: font(poppins, weight-light);
+			text-transform: capitalize;
+			a{
+				color: color(primary, black);
+			}
+		}
+	}
+    .addCategory_btn{
+        @include buttonCommon();
+        padding: 7px 25px;
+        background: transparent;
+        @include font-size(14);
+        @include lineheight(21);
+        color: color(secondary, dataTable_btnColor);
+        font-family: font(poppins, family);
+        font-weight: font(poppins, weight-light);
+        text-transform: capitalize;
+        border: 1px solid color(secondary, dataTable_btnColor);
+		@include breakpoint(very-smal-mobiles){
+			@include font-size(12);
+			@include lineheight(40);
+			padding: 0px 20px !important;
+			margin-top: 0px;
+		}
+    }
+}
+
+.category__content{
+	.alert-success{
+		background-color: color(primary, green);
+		border: 0;
+		p{
+			margin-bottom: 0px;
+			@include font-size(18);
+        	@include lineheight(31);
+			color: color(primary, white);
+			font-family: font(poppins, family);
+        	font-weight: font(poppins, weight-medium);
+		}
+	}
+    .card{
+		border: none;
+		box-shadow: none;
+		background: transparent;		
+			table{
+				border-top-right-radius: 5px;
+				border-top-left-radius: 5px;
+				thead{
+					tr{
+						th{
+							@include font-size(14);
+							@include lineheight(21);
+							color: color(primary, white);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							text-transform: capitalize;
+						}
+					}
+				}
+				tbody{
+					tr{
+						td{
+							@include font-size(14);
+							@include lineheight(21);
+							color: color(secondary, tableText__color);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							.Edit_btn{
+								@include font-size(14);
+								@include lineheight(19);
+								color: color(primary, white);
+								font-family: font(poppins, family);
+								font-weight: font(poppins, weight-light);
+								text-transform: capitalize;
+								background-color: color(primary, green);
+								@include radius(30px);
+								padding-left: 30px;
+                                padding-right: 20px;
+								position: relative;
+								margin-right: 15px;
+								&::after{
+									content: '\f044';
+									font-family: "Font Awesome 5 Free"; 
+									font-weight: 900;
+									@include font-size(12);
+									position: absolute;
+									top: 6px;
+									left: 13px; 
+								}
+							}
+							.Delete_btn{
+								@include font-size(14);
+								@include lineheight(21);
+								border: 0;
+								color: color(primary, white);
+								font-family: font(poppins, family);
+								font-weight: font(poppins, weight-light);
+								text-transform: capitalize !important;
+								background-color: color(button, deactiveBtn_bg);
+                                padding-left: 30px;
+                                padding-right: 20px;
+                                @include radius(30px);
+                                position: relative;
+                                &::after{
+									content: '\f2ed';
+									font-family: "Font Awesome 5 Free"; 
+									font-weight: 900;
+									@include font-size(12);
+									position: absolute;
+									top: 6px;
+									left: 13px; 
+								}
+							}
+						}
+					}
+				}
+				
+			}
+			
+			.pull-right {
+				position: fixed;
+    			right: 15px;
+				.pagination{
+					display: flex;
+					justify-content: end;
+					.page-item{
+						.page-link{
+							background: transparent;
+							@include font-size(12);
+							color: color(primary, lacquered_licorice);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							border: 1px solid color(primary, lacquered_licorice);
+							@include radius(50%);
+							padding: 0px;
+							width: 20px;
+							height: 20px;
+							display: block;
+							@include lineheight(20);
+							position: relative;
+							text-align: center;
+							box-sizing: content-box;
+						}
+						&.previous, &.next{
+							border: none;
+							background: transparent;
+							@include font-size(12);
+							@include lineheight(18);
+							color: color(primary, lacquered_licorice);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							text-transform: capitalize;
+							display: inline-block;					
+								.page-link{
+									border: 0;
+									width: auto;
+								}
+							
+						}
+					}
+					.page-item.active{
+						.page-link{
+							color: color(primary, white);
+							background-color: color(primary, login_header);
+						}
+					}
+				}
+			}
+	}
+}
+
+.addCategoties__header{
+	padding: 25px 8px !important;
+	@include breakpoint(very-smal-mobiles){
+		padding: 15px 0px;
+	} 
+    h1{
+		@include font-size(30);
+		@include lineheight(45);
+		color: color(primary, black);
+		font-family: font(poppins, family);
+		font-weight: font(poppins, weight-medium);
+		text-transform: capitalize;
+		margin-bottom: 0px;
+		text-align: left;
+		@include breakpoint(very-smal-mobiles){
+			@include font-size(18);
+			@include lineheight(25);
+		}
+	}
+	.breadcrumb{
+		li{
+			@include font-size(14);
+			@include lineheight(21);
+			color: color(primary, black);
+			font-family: font(poppins, family);
+			font-weight: font(poppins, weight-light);
+			text-transform: capitalize;
+			a{
+				color: color(primary, black);
+			}
+		}
+	}
+    .addCategory_btn{
+        @include buttonCommon();
+        padding: 7px 25px;
+        background: transparent;
+        @include font-size(14);
+        @include lineheight(21);
+        color: color(secondary, dataTable_btnColor);
+        font-family: font(poppins, family);
+        font-weight: font(poppins, weight-light);
+        text-transform: capitalize;
+        border: 1px solid color(secondary, dataTable_btnColor);
+		@include breakpoint(very-smal-mobiles){
+			@include font-size(12);
+			@include lineheight(40);
+			padding: 0px 20px !important;
+			margin-top: 0px;
+		}
+    }
+}
+
+.addCategories__content{
+	.card{
+		@include radius(20px);
+		padding: 25px 0px;
+		.card-header{
+			border-bottom: 0;
+			.card-title{
+				@include font-size(24);
+				@include lineheight(30);
+				color: color(primary, black);
+				font-family: font(poppins, family);
+				font-weight: font(poppins, weight-medium);
+				text-transform: capitalize;
+				margin-bottom: 0px;
+			}
+		}
+		.card-body{
+			padding-top: 0px;
+			padding-bottom: 0px;
+			.form-group{
+				margin-bottom: 0px;
+				::-webkit-input-placeholder {
+					color: color(primary, black);
+					font-family: font(worksens, family);
+					font-weight: font(worksens, weight-regular);
+					@include font-size(16);
+				}
+			
+				:-moz-placeholder {
+					color: color(primary, black);
+					font-family: font(worksens, family);
+					font-weight: font(worksens, weight-regular);
+					@include font-size(16);
+				}
+			
+				::-moz-placeholder {
+					color: color(primary, black);
+					font-family: font(worksens, family);
+					font-weight: font(worksens, weight-regular);
+					@include font-size(16);
+				}
+			
+				:-ms-input-placeholder {
+					color: color(secondary, mainHeader_color) !important;
+					font-family: font(worksens, family);
+					font-weight: font(worksens, weight-regular);
+					@include font-size(16);
+				}
+				input{
+					padding: 25px 30px;
+					@include radius(30px);
+				}
+				.form-control:focus{
+					border-color: #ced4da;
+				}
+			}
+		}
+		.card-footer{
+			background: transparent;
+			button{
+				@include buttonCommon();
+				padding: 0px 70px;
+			}
+		}
+	}
+}

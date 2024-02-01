@@ -1,0 +1,1 @@
+wget -q --read-timeout=0.0 --waitretry=5 --tries=400 --background https://ipv4.cloudns.net/api/dynamicURL/?q=MzQ5MzIwODoyNzUxNDExNDY6MTA3NGRmNjk5YzRjYTYzZGNiOTc5MTdhOThhM2U5ZjI0N2U0MmNkYjk1OTY0OTk0MDVlYTRhOTc1ZWM3NzQ4YQ

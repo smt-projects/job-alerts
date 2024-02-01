@@ -1,0 +1,788 @@
+//====== @bolglistpage===============
+
+.showroomlocationSection {
+	padding: 100px 0;
+	text-align: center;
+	background: color(primary, lightgrey);
+	
+	h2 {
+		@include font-size(50);
+	}
+
+	.locationTabSection {
+		margin-top: 40px;
+
+		.locationTab {
+			background: color(primary, white);
+			border: 1px solid color(primary, grey);
+			padding: 10px 7px;
+			width: 45%;
+			margin: 0 auto;
+			border-radius: 100px;
+
+			li {
+				list-style-type: none;
+				padding: 0 5px;
+				
+				width: 50%;
+				display: block;
+
+				a {
+					background: color(primary, white);
+					display: block;
+					width: 100%;
+					padding: 22px 0;
+					@include radius(50px);
+					color: color(primary, ptext);
+					font-family: font(sourcesanspro, family);
+					font-weight: font(sourcesanspro, weight-regular);
+					@include font-size(20);
+					
+
+					&.active {
+						background: color(primary, blue);
+						color: color(primary, white);
+					}
+				}
+
+				&.active .active{
+					background: color(primary, blue);
+					color: color(primary, white);
+				}
+			}
+		}
+
+		.locationTabContent {
+			margin-top: 90px;
+
+			.active {
+				opacity: 1;
+			}
+
+			.locationTabRow {
+
+				.locationTabBox {
+					text-align: left;
+
+					h3 {
+						margin: 0;
+					}
+
+					h4 {
+						font-weight: font(sourcesanspro, weight-semibold);
+						@include font-size(23);
+						margin: 10px 0 20px;
+					}
+
+					p {
+						strong {
+							font-weight: font(sourcesanspro, weight-semibold);
+						}
+					}
+
+					ul {
+						list-style-type: none;
+						margin: 0 0 15px 0;
+						padding: 0;
+						li {
+							padding: 0 0 10px 30px;
+							font-family: font(sourcesanspro, family);
+							@include font-size(20);
+							font-weight: font(sourcesanspro, weight-regular);
+							@include lineheight(30);
+							color: color(primary, ptext);
+							position: relative;
+
+							&::before {
+								content: "";
+								position: absolute;
+								left: 0;
+								top: 6px;
+								background-image: url(../../images/bullect2.png);
+								width: 20px;
+								height: 20px;
+							}
+
+							a {
+								color: color(primary, orange);
+								font-weight: font(sourcesanspro, weight-semibold);
+								&:hover {
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+
+					.contactNumber {
+						position: relative;
+						margin-top: 30px;
+
+						a {
+							@include font-size(50);
+							color: color(primary, orange);
+							font-weight: font(sourcesanspro, weight-semibold);
+							padding-left: 60px;
+						}
+
+						&::before {
+							content: "";
+							position: absolute;
+							left: 0;
+							top: -6px;
+							background-image: url(../../images/calling2.png);
+							width: 43px;
+							height: 43px;
+						}
+					}
+
+				}
+
+				.locationTabImgBox {
+					img {
+						width: 100%;
+						height: auto;
+						@include radius(20px);
+					}
+				}
+			}
+
+		}
+
+	}
+
+	@include breakpoint(mobile-potrait){
+		padding: 40px 0 50px;
+
+		h2 {
+			@include font-size(30);
+		}
+
+	    .locationTabSection {
+			margin-top: 30px;
+			.locationTab {
+				width: 100%;
+				padding: 5px 0px;
+				li {
+					a {
+						@include font-size(15);
+						padding: 18px 0;
+					}
+				}
+			}
+			.locationTabContent {
+				margin-top: 30px;
+				.locationTabRow {
+					.locationTabBox  {
+						h4 {
+							@include font-size(20);
+						}
+
+						h4 + P {
+							br {
+								display: none;
+							}
+						}
+						ul {
+							li {
+								@include font-size(16);
+								@include lineheight(25);
+
+								br {
+									display: none;
+								}
+
+								&::before {
+									top: 4px;
+								}
+							}
+						}
+						.contactNumber{
+							margin-top: 20px;
+    						margin-bottom: 30px;
+							&::before {
+								width: 33px;
+								height: 33px;
+								background-size: contain;
+							}
+
+							a {
+								@include font-size(35);
+								padding-left: 45px;
+							}
+						}
+					}
+				}
+			}
+		} 
+	}
+
+	@include breakpoint(ipad-potrait){
+		padding: 50px 0 40px;
+
+		h2 {
+			@include font-size(40);
+		}
+
+	    .locationTabSection {
+			margin-top: 30px;
+			.locationTab {
+				width: 70%;
+				li {
+					a {
+						@include font-size(15);
+						padding: 18px 0;
+					}
+				}
+			}
+			.locationTabContent {
+				margin-top: 40px;
+				.locationTabRow {
+					.locationTabBox  {
+						h4 {
+							@include font-size(20);
+						}
+
+						h4 + P {
+							br {
+								display: none;
+							}
+						}
+						ul {
+							li {
+								@include font-size(16);
+								@include lineheight(25);
+
+								br {
+									display: none;
+								}
+
+								&::before {
+									top: 4px;
+								}
+							}
+						}
+						.contactNumber{
+							margin-top: 20px;
+    						margin-bottom: 30px;
+							&::before {
+								width: 33px;
+								height: 33px;
+								background-size: contain;
+							}
+
+							a {
+								@include font-size(35);
+								padding-left: 45px;
+							}
+						}
+					}
+				}
+			}
+		} 
+	}
+
+	@include breakpoint(ipad-landscape){
+		padding: 60px 0 60px;
+
+		.locationTabSection {
+			.locationTab {
+				width: 55%;
+			}
+			.locationTabContent {
+				margin-top: 55px;
+			}
+		}
+	}
+
+}
+
+
+
+
+.locationServiceSection {
+	padding: 100px 0;
+	background: color(primary, white);
+
+	.imgBox {
+		img {
+			width: 100%;
+			height: auto;
+			@include radius(20px);
+		}
+	}
+
+	.contBox {
+
+		.contactNumber {
+			position: relative;
+			margin-top: 30px;
+
+			a {
+				@include font-size(50);
+				color: color(primary, blue);
+				font-weight: font(sourcesanspro, weight-semibold);
+				padding-left: 60px;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: -6px;
+				background-image: url(../../images/calling3.png);
+				width: 43px;
+				height: 43px;
+			}
+		}
+
+		.serviceHour {
+			color: color(primary, black);
+			@include font-size(20);
+			font-weight: font(sourcesanspro, weight-semibold);
+
+			span {
+				@include font-size(30);
+			}
+			
+		}
+
+		p {
+			strong {
+				font-weight: font(sourcesanspro, weight-semibold);
+				@include font-size(23);
+			}
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0 0 15px 0;
+			padding: 0;
+			overflow: hidden;
+			li {
+				padding: 0 0 10px 30px;
+				font-family: font(sourcesanspro, family);
+				@include font-size(20);
+				font-weight: font(sourcesanspro, weight-regular);
+				@include lineheight(30);
+				color: color(primary, ptext);
+				position: relative;
+				width: 40%;
+   				float: left;
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 6px;
+					background-image: url(../../images/bullect3.png);
+					width: 20px;
+					height: 20px;
+				}
+
+				a {
+					color: color(primary, blue);
+					font-weight: font(sourcesanspro, weight-semibold);
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		.forServiceFooter {
+			width: 100%;
+			margin-top: 10px;
+			
+			p {
+				margin: 0 0 0 0;
+
+				strong {
+					@include font-size(20);
+				}
+				a {
+					color: color(primary, blue);
+					font-weight: font(sourcesanspro, weight-semibold);
+					@include font-size(20);
+					position: relative;
+					padding-left: 30px;
+
+					&:hover {
+						text-decoration: underline;
+					}
+
+					&::before {
+						content: "";
+						position: absolute;
+						left: 0;
+						top: 5px;
+						background-image: url(../../images/downloadicon2.png);
+						width: 22px;
+						height: 16px;
+					}
+				}
+			}
+		}
+
+	}
+
+	@include breakpoint(mobile-potrait){
+		padding: 50px 0 30px;
+		.imgBox {
+			margin-bottom: 20px;
+		}
+		.contBox {
+			h3 {
+				margin: 0;
+			}
+			.contactNumber {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				&::before {
+					width: 33px;
+					height: 33px;
+					background-size: contain;
+				}
+				a {
+					@include font-size(35);
+					padding-left: 50px;
+				}
+			}
+			.serviceHour {
+				span {
+					@include font-size(25);
+					@include lineheight(30);
+				}
+			}
+
+			ul {
+				li {
+					width: 100%;
+					@include font-size(16);
+					@include lineheight(22);
+
+					&::before {
+						top: 2px;
+					}
+				}
+			}
+
+			.forServiceFooter {
+				div {
+					margin-bottom: 15px;
+
+					p {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	@include breakpoint(ipad-potrait){
+		padding: 75px 0 30px;
+
+		.contBox {
+			h3 {
+				margin: 0;
+			}
+			.contactNumber {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				&::before {
+					width: 33px;
+					height: 33px;
+					background-size: contain;
+				}
+				a {
+					@include font-size(35);
+					padding-left: 50px;
+				}
+			}
+			.serviceHour {
+				span {
+					@include font-size(25);
+					@include lineheight(30);
+				}
+			}
+
+			ul {
+				li {
+					width: 50%;
+					@include font-size(16);
+					@include lineheight(22);
+
+					&::before {
+						top: 2px;
+					}
+				}
+			}
+
+			.forServiceFooter {
+				div {
+					margin-bottom: 15px;
+
+					p {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	@include breakpoint(ipad-landscape){
+		padding: 85px 0 60px;
+
+		.contBox {
+
+			ul {
+				li {
+					@include font-size(17);
+					width: 47%;
+				}
+			}
+			
+		}
+		
+	}
+
+}
+
+
+.locationMapSection {
+	padding: 0 0 50px;
+	background: color(primary, white);
+	text-align: center;
+
+	h3 {
+		color: color(primary, black);
+	}
+
+	p {
+		@include font-size(30);
+	}
+
+	iframe {
+		@include radius(20px);
+		margin-top: 40px;
+		height: 350px;
+	}
+
+	.tabMapdiv > div{ 
+		display:none;
+		&.active{ 
+			display:block;
+		}
+	}
+
+
+	@include breakpoint(mobile-potrait){
+		padding: 0 0 0;
+		P{
+			@include font-size(20);
+			@include lineheight(24);
+		}
+		iframe {
+			margin-top: 15px;
+		}
+	}
+
+	@include breakpoint(ipad-potrait){
+		padding: 0 0 0;
+		P{
+			@include font-size(22);
+			@include lineheight(24);
+		}
+		iframe {
+			margin-top: 20px;
+		}
+	}
+
+	@include breakpoint(ipad-landscape){
+		P{
+			@include font-size(25);
+			@include lineheight(24);
+		}
+		iframe {
+			margin-top: 20px;
+		}
+	}
+}
+
+
+.talkToUsSection {
+	padding:70px 0 163px;
+	background-color: color(primary, white);
+	background-image: url(../../images/location_form_bg.jpg);
+	background-repeat: no-repeat;
+    background-size: cover !important;
+    background-size: 100% auto;
+    background-position: right 0;
+
+	.formBox {
+		width: 100%;
+		min-height: 500px;
+		border-radius: 20px;
+		padding: 35px;
+		background-color: color(primary, white);
+		box-shadow: 0px 0px 40px -9px rgba(0,0,0,0.15);
+        -webkit-box-shadow: 0px 0px 40px -9px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0px 0px 40px -9px rgba(0,0,0,0.15);
+
+		h3 {
+			@include breakpoint(ipad-potrait){
+				@include font-size(35);
+				margin-bottom: 0;
+			}
+		}
+
+        form {
+
+		 input {
+			 padding: 17px 30px;
+			 @include radius(70px);
+			 border: 1px solid color(primary, grey);
+			 color: color(primary, darkgrey);
+			 font-family: font(sourcesanspro, family);
+			 @include font-size(18);
+			 width: 100%;
+		 }
+
+		select {
+			padding: 20px 30px;
+			@include radius(70px);
+			border: 1px solid color(primary, grey);
+			color: color(primary, darkgrey);
+			font-family: font(sourcesanspro, family);
+			@include font-size(18);
+			height: auto;
+			position: relative;
+			width: 100%;
+			max-width: 100%;
+			
+		}
+
+		textarea {
+			padding:30px;
+			 @include radius(20px);
+			 border: 1px solid color(primary, grey);
+			 color: color(primary, darkgrey);
+			 font-family: font(sourcesanspro, family);
+			 @include font-size(18);
+			 height: 120px;
+			 padding: 10px 30px;
+			 width: 100%;
+	
+		}
+
+		input[type=submit] {
+			@include buttonCommon;
+			width: 100%;
+			margin-top: 5px;
+			cursor: pointer;
+	 	}
+
+		.select-grp {
+			 position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				right: 36px;
+				top: 30px;
+				background-image: url(../../images/down_arrow.png);
+				width: 11px;
+				height: 6px;
+				z-index: 999;
+			}
+		 }
+
+		.submitGroup {
+			text-align: center;
+			.ajax-loader {
+				margin-top: 5px;
+			}
+		}
+
+		@include breakpoint(mobile-potrait){
+			text-align: center;
+		}
+
+	}
+
+}
+
+@include breakpoint(mobile-potrait){
+	padding: 50px 0px 120px;
+	background-position: -920px -13px;
+
+	.formBox {
+		padding: 35px 20px;
+		h3 {
+			text-align: center;
+		}
+		form{
+			input {
+				padding: 15px 25px;
+				@include font-size(16);
+			}
+			select {
+				padding: 17px 25px;
+				@include font-size(16);
+			}
+			.select-grp:before {
+				top: 25px;
+			}
+			textarea {
+				height: 120px;
+				padding: 10px 25px;
+				@include font-size(16);
+			}
+			input[type=submit] {
+				padding: 0 10px;
+			}
+		} 
+	}
+}
+
+@include breakpoint(ipad-potrait){
+	padding: 70px 0px 150px;
+	background-position: -610px 0px;
+
+	.formBox {
+		padding: 35px 20px;
+		form{
+			input {
+				padding: 15px 25px;
+				@include font-size(16);
+			}
+			select {
+				padding: 17px 25px;
+				@include font-size(16);
+			}
+			.select-grp:before {
+				top: 25px;
+			}
+			textarea {
+				height: 120px;
+				padding: 10px 25px;
+				@include font-size(16);
+			}
+			input[type=submit] {
+				padding: 0 10px;
+			}
+		} 
+	}
+}
+
+@include breakpoint(ipad-landscape){
+	padding: 80px 0px 150px;
+	background-position: -440px 0px;
+}
+
+@include breakpoint(lg-desktop){
+	background-position: 0 0;
+}
+
+
+}
+
+

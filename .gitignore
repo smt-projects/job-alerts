@@ -1,0 +1,8 @@
+# Ignore SQL files in db directory
+db/*.sql
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env

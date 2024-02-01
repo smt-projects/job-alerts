@@ -1,0 +1,148 @@
+
+.headGroupWrap{
+	.siteBanner{
+		.thankuPage_bannerbox{
+			position: relative;
+			.bannerBox_inner{
+				max-width: 700px;
+				margin: 50px auto;
+				padding-bottom: 200px;
+				@include breakpoint(mobile-potrait){
+					margin: 30px auto;
+					padding-bottom: 0px;
+					img{
+						max-width: 18%;
+					}
+				}
+				@include breakpoint(ipad-potrait){
+					padding-bottom: 270px;
+				}
+				h2{
+					@include font-size(70);
+					@include lineheight(60);
+					font-family: font(poppins, family);
+					font-weight: font(poppins, weight-bold);
+					color: color(button, csv_excle_btnColor);
+					text-transform: uppercase;
+					margin-top: 20px;
+					@include breakpoint(laptop-small){
+						@include font-size(65);
+						@include lineheight(55);
+					}
+					@include breakpoint(ipad-landscape){
+						@include font-size(60);
+						@include lineheight(40);
+					}
+					@include breakpoint(ipad-potrait){
+						@include font-size(55);
+						@include lineheight(32);
+					}
+					@include breakpoint(mobile-potrait){
+						@include font-size(40);
+						@include lineheight(32);
+						padding-bottom: 20px;
+					}
+				}
+				h3{
+					@include font-size(60);
+					@include lineheight(60);
+					font-weight: font(poppins, weight-semibold);
+					color: color(secondary, mainHeader_color);
+					text-transform: uppercase;
+					margin-top: 40px;
+					margin-bottom: 0px;
+					@include breakpoint(laptop-small){
+						@include font-size(55);
+						@include lineheight(55);
+					}
+					@include breakpoint(ipad-landscape){
+						@include font-size(50);
+						@include lineheight(50);
+					}
+					@include breakpoint(ipad-potrait){
+						@include font-size(45);
+						@include lineheight(45);
+					}
+					@include breakpoint(mobile-potrait){
+						@include font-size(35);
+						@include lineheight(32);
+						margin-top: 0px;
+						padding-bottom: 15px;
+					}
+				}
+				h6{
+					@include font-size(30);
+					@include lineheight(31);
+					font-weight: font(poppins, weight-semibold);
+					color: color(secondary, mainHeader_color);
+					text-transform: capitalize;
+					@include breakpoint(ipad-potrait){
+						@include font-size(25);
+						@include lineheight(35);
+					}
+					@include breakpoint(mobile-potrait){
+						@include font-size(20);
+						@include lineheight(30);
+					}
+				}
+				p{
+					@include font-size(20);
+					@include lineheight(27);
+					font-weight: font(poppins, weight-regular);
+					color: color(secondary, cardtext);
+					text-transform: capitalize;
+					margin-top: 20px;
+					@include breakpoint(ipad-potrait){
+						@include font-size(18);
+						@include lineheight(30);
+					}
+					@include breakpoint(mobile-potrait){
+						@include font-size(15);
+						@include lineheight(20);
+						margin-top: 5px;
+					}
+				}
+				a{
+					@include buttonCommon;
+					padding: 0px 70px;
+				}
+			}
+			.one_col__section{
+				position: absolute;
+				bottom: -10%;
+				left: 0;
+				margin-bottom: 0px;
+				@include breakpoint(mobile-potrait){
+					position: static;
+				}
+				.oneCol__section_inner{
+					@include breakpoint(mobile-potrait){
+						padding: 30px 0px;
+					}
+				}
+			}
+		}
+	}
+}
+.thankyouPage{
+
+}
+.thankyouPage{
+	background-color: color(secondary, thankyou_pageBody_color) !important;
+	.two_col__section{
+		margin-top: 140px;
+		margin-bottom: 70px;
+		margin-left: 0px;
+		margin-right: 0px;
+		@include breakpoint(mobile-potrait){
+			margin-top: 50px;
+			margin-bottom: 50px;
+			.text__box{
+				order: 1;
+			}
+			.imgBox{
+				order: 0;
+			}
+		}
+	}
+}

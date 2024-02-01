@@ -1,0 +1,13 @@
+
+
+ @function font($font-name, $font-variant) {
+	// map inception
+	@return map-get(map-get($fonts, $font-name), $font-variant);
+ }
+
+// retrieve color from $colors map ie. `color(primary, base)`
+@function color($color-name, $color-variant) {
+	// map inception
+	@return map-get(map-get($colors, $color-name), $color-variant);
+ }
+  

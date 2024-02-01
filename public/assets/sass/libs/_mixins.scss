@@ -1,0 +1,186 @@
+@mixin buttonCommon {
+  display: inline-block;
+  font-family: font(poppins, family);
+  color: color(primary, white);
+  background: color(primary, green);
+  @include font-size(16);
+  font-weight: font(poppins, weight-light);
+  padding: 0 0px;
+  @include lineheight(58);
+  border:0px solid transparent;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  @include radius(100px);
+  margin-top: 10px;
+  @include transition(all 500ms ease-in-out);
+ 
+  &:hover{
+      background:  color(button, bghover);
+      color: color(primary, white);
+  }
+  @include breakpoint(mobile-potrait){
+    @include font-size(15);
+    @include lineheight(46);
+    padding: 0 25px;
+  }
+  @include breakpoint(ipad-potrait){
+    @include font-size(15);
+    @include lineheight(45);
+    padding: 0 40px;
+  }
+}
+
+/****** Transition ******/
+@mixin transition ($transition){
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+}
+
+/****** Shadow ******/
+@mixin shadow ($shadow){
+    box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    -o-box-shadow: $shadow;
+}
+
+/****** Transform ******/
+@mixin transform($transforms) {
+    transform: $transforms;
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    -o-transform: $transforms;
+}
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+@mixin rotate($rotate) {
+  @include transform(rotate($rotate));
+}
+
+/****** Radius ******/
+@mixin radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+/****** Flex ******/
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  -o-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  -ms-flex-align: $align;
+  -o-flex-align: $align;
+  align-items: $align;
+}
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  -o-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+@mixin flex($value) {
+  -webkit-flex: $value;
+  -moz-flex: $value;
+  -ms-flex: $value;
+  -o-flex: $value;
+  flex: $value;
+}
+
+/****** Lineheight ******/
+@mixin lineheight($linhight){
+  line-height: $linhight + px;
+  line-height: (0.0625 * $linhight) + rem;
+}
+
+/****** Order ******/
+@mixin order($value){
+  -webkit-order: $value;
+  -moz-order: $value;
+  -ms-order: $value;
+  -o-order: $value;
+  order: $value;
+}
+
+/****** Placeholder ******/
+@mixin placeholder-color($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+/****** Font Size ******/
+@mixin font($sizeValue: 12 ){
+  font-size: $sizeValue + px;
+  font-size: (0.0625 * $sizeValue) + rem;
+}
+@mixin font-size($sizeValue: 12) {
+  @include font($sizeValue);
+}
+
+
+//------
+@mixin font-smoothing($value: on) {
+	@if $value == on {
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	}
+  
+	@else {
+	  -webkit-font-smoothing: subpixel-antialiased;
+	  -moz-osx-font-smoothing: auto;
+	}
+  }
+
+
+  
+  /****** Linear Gradient ******/
+  @mixin linear-gradient($direction, $color-stops...) {
+	@if is-direction($direction) == false {
+	  $color-stops: $direction, $color-stops;
+	  $direction: 180deg;
+	}
+	background: nth(nth($color-stops, 1), 1);
+	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+	background: -moz-linear-gradient(legacy-direction($direction), $color-stops);
+	background: -ms-linear-gradient(legacy-direction($direction), $color-stops);
+	background: -o-linear-gradient(legacy-direction($direction), $color-stops);
+	background: linear-gradient($direction, $color-stops);
+  }
+  

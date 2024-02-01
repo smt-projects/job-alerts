@@ -1,0 +1,1003 @@
+
+.emailLogs_header{
+	h1{
+		@include font-size(30);
+		@include lineheight(45);
+		color: color(primary, black);
+		font-family: font(poppins, family);
+		font-weight: font(poppins, weight-medium);
+		text-transform: capitalize;
+		margin-bottom: 0px;
+		text-align: left;
+	}
+	.breadcrumb{
+		li{
+			@include font-size(14);
+			@include lineheight(21);
+			color: color(primary, black);
+			font-family: font(poppins, family);
+			font-weight: font(poppins, weight-light);
+			text-transform: capitalize;
+			a{
+				color: color(primary, black);
+			}
+		}
+	}
+}
+.emailLogs_content{
+	.card{
+		border: none;
+		box-shadow: none;
+		background: transparent;
+		.card-body{
+			@include breakpoint(very-smal-mobiles){
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		#EmailLogList__table_wrapper{
+			display: flex;
+			flex-wrap: wrap;
+			.dt-buttons{
+				max-width: 70%;
+				flex: 0 0 70%;
+				@include breakpoint(ipad-landscape){
+					max-width: 80%;
+					flex: 0 0 80%;
+				}
+				@include breakpoint(global-mobile-tab){
+					max-width: 100%;
+					flex: 0 0 100%;
+				}
+				// @include breakpoint(iphone-potrait){
+				// 	max-width: 100%;
+				// 	flex: 0 0 100%;
+				// }
+			}
+			.dataTables_filter{
+				max-width: 30%;
+				flex: 0 0 30%;
+				@include breakpoint(ipad-landscape){
+					max-width: 20%;
+					flex: 0 0 20%;
+				}
+				@include breakpoint(ipad-potrait){
+					max-width: 35%;
+					flex: 0 0 35%;
+					margin-left: auto;
+					position: absolute;
+					right: 4%;
+					top: 66px;
+				}
+				@include breakpoint(iphone-potrait){
+					max-width: 35%;
+					flex: 0 0 35%;
+					position: absolute;
+					right: 4%;
+					top: 66px;
+				}
+				@include breakpoint(very-smal-mobile){
+					max-width: 100%;
+					flex: 0 0 100%;
+					position: static;
+				}
+				label{
+					max-width: 70%;
+					width: 100%;
+					padding-right: 10px;
+					position: relative;
+					@include font-size(0);
+					@include breakpoint(ipad-landscape){
+						max-width: 100%;
+						width: 100%;
+					}
+					@include breakpoint(global-mobile-tab){
+						max-width: 100%;
+						width: 100%;
+					}
+					// @include breakpoint(iphone-potrait){
+					// 	max-width: 100%;
+					// 	width: 100%;
+					// }
+					&::after{
+							content: '\f002';
+							font-family: "Font Awesome 5 Free"; 
+							font-weight: 900;
+							@include font-size(18);
+							color: color(secondary, dataTable_btnColor);
+							position: absolute;
+							top: 11px;
+							right: 20px;
+							@include breakpoint(global-mobile-tab){
+								top: 10px;
+								@include font-size(16);
+							} 
+						}
+					input{
+						height: 40px;
+						width: 100%;
+						@include radius(30px);
+						@include breakpoint(global-mobile-tab){
+							height: 36px;
+						}
+					}
+				}
+			}
+
+			.dt-buttons{
+				margin-bottom: 7px;
+				@include breakpoint(global-mobile-tab){
+					display: flex;
+					flex-wrap: wrap;
+				}
+				@include breakpoint(very-smal-mobile){
+					margin-bottom: 0px;
+				}
+				button{
+					margin-right: 10px;
+					border-radius: 30px;
+					background-color: color(primary, white);
+					padding: 8px 0px 8px 0px;
+					border: 1px solid color(secondary, dataTable_btnColor);
+					@include breakpoint(ipad-potrait){
+						padding: 5px 0px 5px 0px;
+						margin-bottom: 10px;
+					}
+					@include breakpoint(iphone-potrait){
+						padding: 5px 0px 5px 0px;
+						margin-bottom: 10px;
+					}
+					@include breakpoint(very-smal-mobile){
+						padding: 4px 0px 4px 0px;
+						margin-bottom: 10px;
+					}
+					span{
+						@include font-size(14);
+						@include lineheight(21);
+						color: color(secondary, dataTable_btnColor);
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-light);
+						position: relative;
+						padding-left: 15px;
+						@include breakpoint(very-smal-mobile){
+							padding-left: 0px;
+							@include font-size(11);
+							line-height: normal;
+						}						
+					}
+					&:first-child{
+						border: 1px solid color(secondary, dataTable_btnColor);
+						@include breakpoint(global-mobile-tab){
+							max-width: 24%;
+							width: 100%;
+							margin-right: 1%;							
+						}
+						@include breakpoint(very-smal-mobile){
+							max-width: 30%;
+							width: 100%;
+							margin-right: 2%;
+							span{
+								padding-left: 0px;
+								&:first-child{								
+									&::after{
+										display: none;
+									}
+								}
+							}
+						}
+						span{
+							color: color(secondary, dataTable_btnColor);
+							&:first-child{								
+								&::after{
+									content: '\f0c5';
+									font-family: "Font Awesome 5 Free"; 
+									font-weight: 900;
+									position: absolute;
+									top: 0px;
+									left: 0px; 
+								}
+							}
+						}																		
+					}
+					&:nth-child(2){
+						border: 1px solid color(button, csv_excle_btnColor);
+						@include breakpoint(global-mobile-tab){
+							max-width: 24%;
+							width: 100%;
+							margin-right: 1%;
+							
+						}
+						// @include breakpoint(iphone-potrait){
+						// 	max-width: 24%;
+						// 	width: 100%;
+						// 	margin-right: 1%;
+						// }
+						@include breakpoint(very-smal-mobile){
+							max-width: 30%;
+							width: 100%;
+							margin-right: 2%;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						span{
+							color: color(button, csv_excle_btnColor);
+							&::after{
+								content: '\f6dd';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: 0px; 
+							}
+						}
+					}
+					&:nth-child(3){
+						border: 1px solid color(button, csv_excle_btnColor);
+						@include breakpoint(global-mobile-tab){
+							max-width: 25%;
+							width: 100%;
+							margin-right: 1%;
+							
+						}
+						// @include breakpoint(iphone-potrait){
+						// 	max-width: 25%;
+						// 	width: 100%;
+						// 	margin-right: 1%;
+						// }
+						@include breakpoint(very-smal-mobile){
+							max-width: 36%;
+							width: 100%;
+							margin-right: 0;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						span{
+							color: color(button, csv_excle_btnColor);
+							&::after{
+								content: '\f1c3';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: 0px;
+							}
+						}
+					}
+					&:nth-child(4){
+						border: 1px solid color(button, csv_excle_btnColor);
+						@include breakpoint(global-mobile-tab){
+							max-width: 24%;
+							width: 100%;
+							margin-right: 0;							
+						}
+						@include breakpoint(very-smal-mobile){
+							max-width: 30%;
+							width: 100%;
+							margin-right: 2%;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						// @include breakpoint(iphone-potrait){
+						// 	max-width: 24%;
+						// 	width: 100%;
+						// 	margin-right: 0;
+						// }
+						span{
+							color: color(button, csv_excle_btnColor);
+							&::after{
+								content: '\f1c1';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: 0px;
+							}
+						}
+					}
+					&:nth-child(5){
+						@include breakpoint(global-mobile-tab){
+							max-width: 25%;
+							width: 100%;
+							margin-right: 1%;							
+						}
+						@include breakpoint(very-smal-mobile){
+							max-width: 30%;
+							width: 100%;
+							margin-right: 2%;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						// @include breakpoint(iphone-potrait){
+						// 	max-width: 24%;
+						// 	width: 100%;
+						// 	margin-right: 1%;
+						// }
+						span{
+							&::after{
+								content: '\f02f';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: -3px;
+							}
+						}						
+					}
+					&:nth-child(6){
+						@include breakpoint(global-mobile-tab){
+							max-width: 36%;
+							width: 100%;
+							margin-right: 1%;							
+						}
+						@include breakpoint(iphone-potrait){
+							max-width: 36%;
+							width: 100%;
+							margin-right: 1%;
+						}
+						@include breakpoint(very-smal-mobile){
+							max-width: 36%;
+							width: 100%;
+							margin-right: 0;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						span{
+							&::after{
+								content: '\f0ce';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: -3px;
+							}
+						}						
+					}					
+				}
+				// .btn-group{
+				// 	.buttons-collection{
+				// 		span{
+				// 			&:first-child{
+				// 				padding-left: 15px;
+				// 				position: relative;
+				// 				&::after{
+				// 					content: '\f0ce';
+				// 					font-family: "Font Awesome 5 Free"; 
+				// 					font-weight: 900;
+				// 					position: absolute;
+				// 					top: 0px;
+				// 					left: -3px;
+				// 				}
+				// 			}
+				// 			&:nth-child(2){
+				// 				padding-left: 0px !important;
+				// 			}
+				// 		}
+				// 		&::after{
+				// 			display: none !important;
+				// 		}
+				// 	}
+				// }
+			}
+			
+			table{
+				border-top-right-radius: 5px;
+				border-top-left-radius: 5px;
+				max-width: 100%;
+				//width: 100%;
+				//overflow: hidden;
+				overflow-x: auto;
+				thead{
+					tr{
+						th{
+							@include font-size(14);
+							@include lineheight(21);
+							color: color(primary, white);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							text-transform: capitalize;
+						}
+					}
+				}
+
+				tbody{
+					tr{
+						td{
+							@include font-size(14);
+							@include lineheight(21);
+							color: color(secondary, tableText__color);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							border: 0;
+							a{
+								@include font-size(14);
+								@include lineheight(19);
+								color: color(primary, white);
+								font-family: font(poppins, family);
+								font-weight: font(poppins, weight-light);
+								text-transform: capitalize;
+								background-color: color(primary, green);
+								@include radius(30px);
+								padding-left: 25px;
+								position: relative;
+								margin-right: 15px;
+								&::after{
+									content: '\f06e';
+									font-family: "Font Awesome 5 Free"; 
+									font-weight: 900;
+									@include font-size(12);
+									position: absolute;
+									top: 6px;
+									left: 8px; 
+								}
+							}
+							button{
+								@include font-size(14);
+								@include lineheight(21);
+								border: 0;
+								color: color(primary, login_header);
+								font-family: font(poppins, family);
+								font-weight: font(poppins, weight-medium);
+								text-transform: capitalize !important;
+								background: transparent;
+							}
+						}
+					}
+				}
+				
+			}
+			#EmailLogList__table_info{
+				max-width: 50%;
+				flex: 0 0 50%;
+				@include font-size(12);
+				@include lineheight(18);
+				color: color(secondary, tableText__color);
+				font-family: font(poppins, family);
+				font-weight: font(poppins, weight-light);
+				text-transform: capitalize;
+				text-align: left;
+				@include breakpoint(very-smal-mobile){
+					max-width: 100%;
+					flex: 0 0 100%;
+				}
+			}
+			.dataTables_paginate {
+				max-width: 50%;
+				flex: 0 0 50%;
+				padding-right: 2px;
+				@include breakpoint(very-smal-mobile){
+					max-width: 100%;
+					// flex: 0 0 100%;
+					//text-align: center;
+					margin: 8px auto;
+				}
+				.pagination{
+					display: flex;
+					justify-content: end;
+					.page-item{
+						.page-link{
+							background: transparent;
+							@include font-size(12);
+							color: color(primary, lacquered_licorice);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							border: 1px solid color(primary, lacquered_licorice);
+							@include radius(50%);
+							padding: 0px;
+							width: 20px;
+							height: 20px;
+							display: block;
+							@include lineheight(20);
+							position: relative;
+							text-align: center;
+							box-sizing: content-box;
+						}
+						&.previous, &.next{
+							border: none;
+							background: transparent;
+							@include font-size(12);
+							@include lineheight(18);
+							color: color(primary, lacquered_licorice);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							text-transform: capitalize;
+							display: inline-block;					
+								.page-link{
+									border: 0;
+									width: auto;
+								}
+							
+						}
+					}
+					.page-item.active{
+						.page-link{
+							color: color(primary, white);
+							background-color: color(primary, login_header);
+						}
+					}
+				}
+			}
+			// #exampleModalLong1{
+			// 	.row{
+			// 		&:first-child{
+			// 			.col-md-6{
+			// 				max-width: 70%;
+			// 				flex: 0 0 70%;
+			// 				&:last-child{
+			// 					max-width: 30%;
+			// 					flex: 0 0 30%;
+			// 					position: relative;
+			// 					&::after{
+			// 						content: '\f002';
+			// 						font-family: "Font Awesome 5 Free"; 
+			// 						font-weight: 900;
+			// 						@include font-size(16);
+			// 						color: color(secondary, dataTable_btnColor);
+			// 						position: absolute;
+			// 						top: 12px;
+			// 						right: 20px; 
+			// 					}
+			// 					input{
+			// 						padding: 18px 20px;
+			// 						@include radius(30px);
+									
+			// 					}
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// 	.dt-buttons{
+			// 		margin-bottom: 7px;
+			// 		button{
+			// 			margin-right: 10px;
+			// 			border-radius: 30px;
+			// 			background-color: color(primary, white);
+			// 			padding: 8px 20px 8px 20px;
+			// 			border: 1px solid color(secondary, dataTable_btnColor);
+			// 			span{
+			// 				@include font-size(14);
+			// 				@include lineheight(21);
+			// 				color: color(secondary, dataTable_btnColor);
+			// 				font-family: font(poppins, family);
+			// 				font-weight: font(poppins, weight-light);
+			// 				position: relative;
+			// 				padding-left: 15px;						
+			// 			}
+			// 			&:first-child{
+			// 				border: 1px solid color(secondary, dataTable_btnColor);
+			// 				span{
+			// 					color: color(secondary, dataTable_btnColor);
+			// 					&:first-child{								
+			// 						&::after{
+			// 							content: '\f0c5';
+			// 							font-family: "Font Awesome 5 Free"; 
+			// 							font-weight: 900;
+			// 							position: absolute;
+			// 							top: 0px;
+			// 							left: 0px; 
+			// 						}
+			// 					}
+			// 				}																		
+			// 			}
+			// 			&:nth-child(2){
+			// 				border: 1px solid color(button, csv_excle_btnColor);
+			// 				span{
+			// 					color: color(button, csv_excle_btnColor);
+			// 					&::after{
+			// 						content: '\f6dd';
+			// 						font-family: "Font Awesome 5 Free"; 
+			// 						font-weight: 900;
+			// 						position: absolute;
+			// 						top: 0px;
+			// 						left: 0px; 
+			// 					}
+			// 				}
+			// 			}
+			// 			&:nth-child(3){
+			// 				border: 1px solid color(button, csv_excle_btnColor);
+			// 				span{
+			// 					color: color(button, csv_excle_btnColor);
+			// 					&::after{
+			// 						content: '\f1c3';
+			// 						font-family: "Font Awesome 5 Free"; 
+			// 						font-weight: 900;
+			// 						position: absolute;
+			// 						top: 0px;
+			// 						left: 0px;
+			// 					}
+			// 				}
+			// 			}
+			// 			&:nth-child(4){
+			// 				border: 1px solid color(button, csv_excle_btnColor);
+			// 				span{
+			// 					color: color(button, csv_excle_btnColor);
+			// 					&::after{
+			// 						content: '\f1c1';
+			// 						font-family: "Font Awesome 5 Free"; 
+			// 						font-weight: 900;
+			// 						position: absolute;
+			// 						top: 0px;
+			// 						left: 0px;
+			// 					}
+			// 				}
+			// 			}
+			// 			&:nth-child(5){
+			// 				span{
+			// 					&::after{
+			// 						content: '\f02f';
+			// 						font-family: "Font Awesome 5 Free"; 
+			// 						font-weight: 900;
+			// 						position: absolute;
+			// 						top: 0px;
+			// 						left: -3px;
+			// 					}
+			// 				}						
+			// 			}					
+			// 		}
+			// 		.btn-group{
+			// 			.buttons-collection{
+			// 				span{
+			// 					&:first-child{
+			// 						padding-left: 15px;
+			// 						position: relative;
+			// 						&::after{
+			// 							content: '\f0ce';
+			// 							font-family: "Font Awesome 5 Free"; 
+			// 							font-weight: 900;
+			// 							position: absolute;
+			// 							top: 0px;
+			// 							left: -3px;
+			// 						}
+			// 					}
+			// 					&:nth-child(2){
+			// 						padding-left: 0px !important;
+			// 					}
+			// 				}
+			// 				&::after{
+			// 					display: none !important;
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// 	#EmailLogList__table_filter{
+			// 		text-align: right;
+			// 		label{
+			// 			font-size: 0;
+			// 			input{
+							
+			// 			}
+			// 		}
+			// 	}
+			// 	table{
+			// 		border-top-right-radius: 5px;
+			// 		border-top-left-radius: 5px;
+			// 		thead{
+			// 			tr{
+			// 				th{
+			// 					@include font-size(14);
+			// 					@include lineheight(21);
+			// 					color: color(primary, white);
+			// 					font-family: font(poppins, family);
+			// 					font-weight: font(poppins, weight-light);
+			// 					text-transform: capitalize;
+			// 				}
+			// 			}
+			// 		}
+
+			// 		tbody{
+			// 			tr{
+			// 				td{
+			// 					@include font-size(14);
+			// 					@include lineheight(21);
+			// 					color: color(secondary, tableText__color);
+			// 					font-family: font(poppins, family);
+			// 					font-weight: font(poppins, weight-light);
+			// 					border: 0;
+			// 					a{
+			// 						@include font-size(14);
+			// 						@include lineheight(19);
+			// 						color: color(primary, white);
+			// 						font-family: font(poppins, family);
+			// 						font-weight: font(poppins, weight-light);
+			// 						text-transform: capitalize;
+			// 						background-color: color(primary, green);
+			// 						@include radius(30px);
+			// 						padding-left: 25px;
+			// 						position: relative;
+			// 						margin-right: 15px;
+			// 						&::after{
+			// 							content: '\f06e';
+			// 							font-family: "Font Awesome 5 Free"; 
+			// 							font-weight: 900;
+			// 							@include font-size(12);
+			// 							position: absolute;
+			// 							top: 6px;
+			// 							left: 8px; 
+			// 						}
+			// 					}
+			// 					button{
+			// 						@include font-size(14);
+			// 						@include lineheight(21);
+			// 						border: 0;
+			// 						color: color(primary, login_header);
+			// 						font-family: font(poppins, family);
+			// 						font-weight: font(poppins, weight-medium);
+			// 						text-transform: capitalize !important;
+			// 						background: transparent;
+			// 					}
+			// 				}
+			// 			}
+			// 		}
+					
+			// 	}
+			// 	#dataTables_info{
+			// 		@include font-size(12);
+			// 		@include lineheight(18);
+			// 		color: color(secondary, tableText__color);
+			// 		font-family: font(poppins, family);
+			// 		font-weight: font(poppins, weight-light);
+			// 		text-transform: capitalize;
+			// 	}
+			// 	.dataTables_paginate {
+			// 		.pagination{
+			// 			display: flex;
+			// 			justify-content: end;
+			// 			.page-item{
+			// 				.page-link{
+			// 					background: transparent;
+			// 					@include font-size(12);
+			// 					color: color(primary, lacquered_licorice);
+			// 					font-family: font(poppins, family);
+			// 					font-weight: font(poppins, weight-light);
+			// 					border: 1px solid color(primary, lacquered_licorice);
+			// 					@include radius(50%);
+			// 					padding: 0px;
+			// 					width: 20px;
+			// 					height: 20px;
+			// 					display: block;
+			// 					@include lineheight(20);
+			// 					position: relative;
+			// 					text-align: center;
+			// 					box-sizing: content-box;
+			// 				}
+			// 				&.previous, &.next{
+			// 					border: none;
+			// 					background: transparent;
+			// 					@include font-size(12);
+			// 					@include lineheight(18);
+			// 					color: color(primary, lacquered_licorice);
+			// 					font-family: font(poppins, family);
+			// 					font-weight: font(poppins, weight-light);
+			// 					text-transform: capitalize;
+			// 					display: inline-block;					
+			// 						.page-link{
+			// 							border: 0;
+			// 							width: auto;
+			// 						}
+								
+			// 				}
+			// 			}
+			// 			.page-item.active{
+			// 				.page-link{
+			// 					color: color(primary, white);
+			// 					background-color: color(primary, login_header);
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// }
+		}
+	}
+}
+
+//***************** Modal Section Css  *******************//
+
+.emailLogs_content{
+	.card{
+		.card-body{
+			#EmailLogList__table_wrapper{
+				#EmailLogList__table{
+					#emailModalLong1{
+						.modal-header{
+							border-bottom: 0;
+							padding-bottom: 0px;
+							h5{
+								@include font-size(26);
+								@include lineheight(34);
+								color: color(secondary, mainHeader_color);
+								font-family: font(poppins, family);
+								font-weight: font(poppins, weight-light);
+								text-transform: capitalize;
+								text-align: center;
+							}
+						}
+						.modal-body{
+							background-color: color(primary, white);
+							border: none !important;
+							padding: 0px !important;
+							tbody tr:nth-of-type(odd) {
+								background-color: #fff !important;
+							}
+							.templateContainer{
+								max-width: 100% !important;
+								width: 100% !important;
+							}
+							.mcnTextContent{
+								h1{
+									padding-top: 40px;
+								}
+								h2{
+									border-bottom: 5px solid green !important;
+									padding-bottom: 15px;
+								}
+							}
+							tbody{
+								.mcnButton{
+									display: inline-block;
+									font-family: font(poppins, family);
+									color: color(primary, white);
+									background: color(primary, green) !important;
+									@include font-size(16);
+									font-weight: font(poppins, weight-light);
+									padding: 0 50px;
+									line-height: 58px !important;
+									border:0px solid transparent;
+									box-sizing: border-box;
+									text-transform: capitalize;
+									@include radius(5px);
+									margin-top: 10px;
+									@include transition(all 500ms ease-in-out);									
+									&:hover{
+										background:  color(button, bghover);
+										color: color(primary, white);
+									}
+								}
+								tr{	
+									#templateHeader{
+										padding-left: 30px !important;
+										padding-right: 30px !important;
+										padding-bottom: 25px !important;
+									}								
+									#templateBody{
+										background-color: #a8a8a8 !important;										
+										padding: 30px 0px !important;
+										table{
+											background: transparent !important;
+										}
+										tr{
+											background: transparent !important;
+										}
+										.mcnTextContent{											
+											h4{												
+												@include lineheight(34);
+												color: color(primary, white);
+												font-family: font(poppins, family);
+												font-weight: font(poppins, weight-medium);
+												text-transform: uppercase;
+												text-align: center;
+												span{
+													@include font-size(26);
+												}
+											}
+											div > span{
+												@include font-size(18);
+												@include lineheight(26);
+												color: color(primary, white);
+												font-family: font(poppins, family);
+												font-weight: font(poppins, weight-light);
+												text-transform: capitalize;
+												text-align: center;
+											}
+										}
+									}
+									#templateFooter{
+										background-color: color(primary, lightblack) !important;
+										padding: 30px 0px !important;
+										table{
+											background: transparent;
+											tr{
+												background: transparent;
+												background: none !important;
+												td{
+													background: transparent;
+													a{
+														background: transparent;
+														cursor: pointer;													
+														&::after{
+															display: none;
+														}
+													}
+												}
+												.mcnTextContent{
+													@include font-size(16);
+													@include lineheight(24);
+													color: color(secondary, cardtext);
+													font-family: font(poppins, family);
+													font-weight: font(poppins, weight-light);
+													text-align: center;
+												}
+											}
+										}
+									}
+								}
+								tr{
+									td{
+										padding: 0px !important;
+										a{
+											padding-left: 0px;
+										}
+									}
+								}								
+							}
+							#bodyCell {
+								padding: 10px;
+							}							
+							.table-bordered td, .table-bordered th{
+								border: 0 !important;
+							}
+							#bodyTable{
+								background: transparent;
+								.table-bordered td{
+									border: 0px !important;
+								}
+								.table-bordered th{
+									border: 0px !important;
+								}
+							}
+							.mcnTextBlockOuter{
+								tr{
+									td{
+										.job-titles{
+											margin: 0px !important;
+											a{
+												background: transparent !important;
+												color: color(button, blue);
+												text-decoration: underline;
+												padding: 0px 0px 0px 15px;
+												&::after{
+													display: none;
+												}
+											}
+										}									
+									}
+								}
+							}
+							.mcnButtonBlockOuter{
+								tr{
+									td{
+										a{
+											background: transparent;
+											color: color(button, blue);
+											&::after{
+												display: none;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

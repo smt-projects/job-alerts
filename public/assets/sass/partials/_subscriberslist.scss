@@ -1,0 +1,927 @@
+
+
+// ********************SideBar Scss*********************************
+@include breakpoint(ipad-potrait){
+	body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper, body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer{
+		margin-left: 250px;
+	}
+} 
+@include breakpoint(ipad-potrait){
+	.layout-fixed .main-sidebar {
+		bottom: 0;
+		float: none;
+		position: fixed;
+		top: 0;
+		left: 250px !important;
+	}
+}
+
+
+
+.main-sidebar{
+	background-color: color(primary, login_header);
+	.brand-link{
+		border-bottom: 1px solid #dee2e6;
+		padding: 22px;
+	}
+	.sidebar{
+		padding: 0px !important;
+		position: relative;
+		.user-panel{
+			padding: 20px 10px;
+			border-bottom: 1px solid #dee2e6;
+			.user_img{
+				img{
+					opacity: 0.5;
+				}
+			}
+			.userName{
+				padding-left: 10px !important;
+				a{
+					@include font-size(16);
+					@include lineheight(24);
+					color: color(primary, white);
+					font-family: font(poppins, family);
+					font-weight: font(poppins, weight-medium);
+					text-transform: capitalize;
+				}
+			}
+		}
+		.menu__nav{
+			ul{
+				margin-top: 20px;
+				.nav-item{
+					padding-left: 0px;
+					.nav-link{
+						@include radius(0px);
+						width: 100%;
+					}
+					.nav-link.active{
+						background-color: color(primary, green);
+						width: 250px;
+					}
+					// &:first-child{
+					// 	padding-left: 0px;
+					// 	a{
+					// 		background-color: color(primary, green);
+					// 		width: 250px;
+					// 	}
+					// }
+					a{
+						i{
+							@include font-size(16);
+							color: color(primary, white);
+						}
+						p{
+							@include font-size(16);
+							@include lineheight(34);
+							color: color(primary, white);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-semibold);
+							text-transform: capitalize;
+							i{
+								@include font-size(16);
+								color: color(primary, white);
+								@include transition(all 0.3s linear);
+							}
+						}
+					}
+				}
+				.nav-item.menu-open{
+					a{
+						p{
+							i{
+								transform: rotate(180deg) !important;
+							}
+						}
+					}
+					.nav-treeview{
+						margin-top: 0px;
+						.nav-item{
+							padding-left: 25px;
+							a{
+								background: transparent;
+								padding: 0px;
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		.last_child{
+			position: absolute;
+			bottom: 70px !important;
+			left: 24px;
+			a{
+				background: transparent;
+				color: color(primary, white);
+				font-family: font(poppins, family);
+				font-weight: font(poppins, weight-light);
+				border: 2px solid color(primary, white);
+				@include radius(30px);
+				padding: 10px 50px;
+			}	
+		}
+	}
+}
+
+.main-header{
+	padding: 20px 0px;
+	@include breakpoint(ipad-potrait){
+		transition: margin-left .3s ease-in-out;
+    	margin-left: 250px !important;
+	}
+	.topNav_list{
+		.hamburger_icon{
+			display: none;
+			@include breakpoint(mobile-potrait){
+				display: block;
+			}
+		}
+	}
+	.navbar-nav{
+		.nav-item{
+			a{
+				@include font-size(18);
+				@include lineheight(27);
+				color: color(secondary, lightblackrussian);
+				font-family: font(poppins, family);
+				font-weight: font(poppins, weight-light);
+				text-transform: capitalize;
+			}
+		}
+	}
+}
+.subscriberList__header, .subscriberDetails__header{
+	h1{
+		@include font-size(30);
+		@include lineheight(45);
+		color: color(primary, black);
+		font-family: font(poppins, family);
+		font-weight: font(poppins, weight-medium);
+		text-transform: capitalize;
+		margin-bottom: 0px;
+		@include breakpoint(mobile-potrait){
+			@include font-size(22);
+			@include lineheight(28);
+		}
+		@include breakpoint(very-smal-mobiles){
+			@include font-size(18);
+			@include lineheight(25);
+		}
+	}
+	.breadcrumb{
+		li{
+			@include font-size(14);
+			@include lineheight(21);
+			color: color(primary, black);
+			font-family: font(poppins, family);
+			font-weight: font(poppins, weight-light);
+			text-transform: capitalize;
+			a{
+				color: color(primary, black);
+			}
+		}
+	}
+}
+
+.subscriberList__content{
+	.alert-success{
+		background-color: color(primary, green);
+		border: 0;
+		p{
+			margin-bottom: 0px;
+			@include font-size(18);
+        	@include lineheight(31);
+			color: color(primary, white);
+			font-family: font(poppins, family);
+        	font-weight: font(poppins, weight-medium);
+		}
+	}
+	.card{
+		border: none;
+		box-shadow: none;
+		background: transparent;
+		.card-body{
+			@include breakpoint(very-smal-mobiles){
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		#subscriberList__table_wrapper{
+			display: flex;
+			flex-wrap: wrap;
+			.dt-buttons{
+				max-width: 70%;
+				flex: 0 0 70%;
+				@include breakpoint(ipad-landscape){
+					max-width: 80%;
+					flex: 0 0 80%;
+				}
+				@include breakpoint(global-mobile-tab){
+					max-width: 100%;
+					flex: 0 0 100%;
+				}
+				// @include breakpoint(iphone-potrait){
+				// 	max-width: 100%;
+				// 	flex: 0 0 100%;
+				// }
+			}
+			.dataTables_filter{
+				max-width: 30%;
+				flex: 0 0 30%;
+				@include breakpoint(ipad-landscape){
+					max-width: 20%;
+					flex: 0 0 20%;
+				}
+				@include breakpoint(ipad-potrait){
+					max-width: 35%;
+					flex: 0 0 35%;
+					margin-left: auto;
+					position: absolute;
+					right: 4%;
+					top: 66px;
+				}
+				@include breakpoint(iphone-potrait){
+					max-width: 35%;
+					flex: 0 0 35%;
+					position: absolute;
+					right: 4%;
+					top: 66px;
+				}
+				@include breakpoint(very-smal-mobile){
+					max-width: 100%;
+					flex: 0 0 100%;
+					position: static;
+				}
+				label{
+					max-width: 70%;
+					width: 100%;
+					padding-right: 10px;
+					position: relative;
+					@include font-size(0);
+					@include breakpoint(ipad-landscape){
+						max-width: 100%;
+						width: 100%;
+					}
+					@include breakpoint(global-mobile-tab){
+						max-width: 100%;
+						width: 100%;
+					}
+					// @include breakpoint(iphone-potrait){
+					// 	max-width: 100%;
+					// 	width: 100%;
+					// }
+					&::after{
+							content: '\f002';
+							font-family: "Font Awesome 5 Free"; 
+							font-weight: 900;
+							@include font-size(18);
+							color: color(secondary, dataTable_btnColor);
+							position: absolute;
+							top: 11px;
+							right: 20px;
+							@include breakpoint(global-mobile-tab){
+								top: 10px;
+								@include font-size(16);
+							} 
+						}
+					input{
+						height: 40px;
+						width: 100%;
+						@include radius(30px);
+						@include breakpoint(global-mobile-tab){
+							height: 36px;
+						}
+					}
+				}
+			}
+
+			.dt-buttons{
+				margin-bottom: 7px;
+				@include breakpoint(global-mobile-tab){
+					display: flex;
+					flex-wrap: wrap;
+				}
+				@include breakpoint(very-smal-mobile){
+					margin-bottom: 0px;
+				}
+				button{
+					margin-right: 10px;
+					border-radius: 30px;
+					background-color: color(primary, white);
+					padding: 8px 0px 8px 0px;
+					border: 1px solid color(secondary, dataTable_btnColor);
+					@include breakpoint(ipad-potrait){
+						padding: 5px 0px 5px 0px;
+						margin-bottom: 10px;
+					}
+					@include breakpoint(iphone-potrait){
+						padding: 5px 0px 5px 0px;
+						margin-bottom: 10px;
+					}
+					@include breakpoint(very-smal-mobile){
+						padding: 4px 0px 4px 0px;
+						margin-bottom: 10px;
+					}
+					span{
+						@include font-size(14);
+						@include lineheight(21);
+						color: color(secondary, dataTable_btnColor);
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-light);
+						position: relative;
+						padding-left: 15px;
+						@include breakpoint(very-smal-mobile){
+							padding-left: 0px;
+							@include font-size(11);
+							line-height: normal;
+						}						
+					}
+					&:first-child{
+						border: 1px solid color(secondary, dataTable_btnColor);
+						@include breakpoint(global-mobile-tab){
+							max-width: 24%;
+							width: 100%;
+							margin-right: 1%;							
+						}
+						@include breakpoint(very-smal-mobile){
+							max-width: 30%;
+							width: 100%;
+							margin-right: 2%;
+							span{
+								padding-left: 0px;
+								&:first-child{								
+									&::after{
+										display: none;
+									}
+								}
+							}
+						}
+						span{
+							color: color(secondary, dataTable_btnColor);
+							&:first-child{								
+								&::after{
+									content: '\f0c5';
+									font-family: "Font Awesome 5 Free"; 
+									font-weight: 900;
+									position: absolute;
+									top: 0px;
+									left: 0px; 
+								}
+							}
+						}																		
+					}
+					&:nth-child(2){
+						border: 1px solid color(button, csv_excle_btnColor);
+						@include breakpoint(global-mobile-tab){
+							max-width: 24%;
+							width: 100%;
+							margin-right: 1%;
+							
+						}
+						// @include breakpoint(iphone-potrait){
+						// 	max-width: 24%;
+						// 	width: 100%;
+						// 	margin-right: 1%;
+						// }
+						@include breakpoint(very-smal-mobile){
+							max-width: 30%;
+							width: 100%;
+							margin-right: 2%;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						span{
+							color: color(button, csv_excle_btnColor);
+							&::after{
+								content: '\f6dd';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: 0px; 
+							}
+						}
+					}
+					&:nth-child(3){
+						border: 1px solid color(button, csv_excle_btnColor);
+						@include breakpoint(global-mobile-tab){
+							max-width: 25%;
+							width: 100%;
+							margin-right: 1%;
+							
+						}
+						// @include breakpoint(iphone-potrait){
+						// 	max-width: 25%;
+						// 	width: 100%;
+						// 	margin-right: 1%;
+						// }
+						@include breakpoint(very-smal-mobile){
+							max-width: 36%;
+							width: 100%;
+							margin-right: 0;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						span{
+							color: color(button, csv_excle_btnColor);
+							&::after{
+								content: '\f1c3';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: 0px;
+							}
+						}
+					}
+					&:nth-child(4){
+						border: 1px solid color(button, csv_excle_btnColor);
+						@include breakpoint(global-mobile-tab){
+							max-width: 24%;
+							width: 100%;
+							margin-right: 0;							
+						}
+						@include breakpoint(very-smal-mobile){
+							max-width: 30%;
+							width: 100%;
+							margin-right: 2%;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						// @include breakpoint(iphone-potrait){
+						// 	max-width: 24%;
+						// 	width: 100%;
+						// 	margin-right: 0;
+						// }
+						span{
+							color: color(button, csv_excle_btnColor);
+							&::after{
+								content: '\f1c1';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: 0px;
+							}
+						}
+					}
+					&:nth-child(5){
+						@include breakpoint(global-mobile-tab){
+							max-width: 25%;
+							width: 100%;
+							margin-right: 1%;							
+						}
+						@include breakpoint(very-smal-mobile){
+							max-width: 30%;
+							width: 100%;
+							margin-right: 2%;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						// @include breakpoint(iphone-potrait){
+						// 	max-width: 24%;
+						// 	width: 100%;
+						// 	margin-right: 1%;
+						// }
+						span{
+							&::after{
+								content: '\f02f';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: -3px;
+							}
+						}						
+					}
+					&:nth-child(6){
+						@include breakpoint(global-mobile-tab){
+							max-width: 36%;
+							width: 100%;
+							margin-right: 1%;							
+						}
+						@include breakpoint(iphone-potrait){
+							max-width: 36%;
+							width: 100%;
+							margin-right: 1%;
+						}
+						@include breakpoint(very-smal-mobile){
+							max-width: 36%;
+							width: 100%;
+							margin-right: 0;
+							span{
+								padding-left: 0px;
+								&::after{
+									display: none;
+								}
+							}
+						}
+						span{
+							&::after{
+								content: '\f0ce';
+								font-family: "Font Awesome 5 Free"; 
+								font-weight: 900;
+								position: absolute;
+								top: 0px;
+								left: -3px;
+							}
+						}						
+					}					
+				}
+				// .btn-group{
+				// 	.buttons-collection{
+				// 		span{
+				// 			&:first-child{
+				// 				padding-left: 15px;
+				// 				position: relative;
+				// 				&::after{
+				// 					content: '\f0ce';
+				// 					font-family: "Font Awesome 5 Free"; 
+				// 					font-weight: 900;
+				// 					position: absolute;
+				// 					top: 0px;
+				// 					left: -3px;
+				// 				}
+				// 			}
+				// 			&:nth-child(2){
+				// 				padding-left: 0px !important;
+				// 			}
+				// 		}
+				// 		&::after{
+				// 			display: none !important;
+				// 		}
+				// 	}
+				// }
+			}
+			// #subscriberList__table_filter{
+			// 	text-align: right;
+			// 	label{
+			// 		font-size: 0;
+			// 		input{
+						
+			// 		}
+			// 	}
+			// }
+			table{
+				border-top-right-radius: 5px;
+				border-top-left-radius: 5px;
+				max-width: 100%;
+				width: 100%;
+				//overflow: hidden;
+				overflow-x: auto;
+				thead{
+					tr{
+						th{
+							@include font-size(14);
+							@include lineheight(21);
+							color: color(primary, white);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							text-transform: capitalize;
+						}
+					}
+				}
+				tbody{
+					tr{
+						td{
+							@include font-size(14);
+							@include lineheight(21);
+							color: color(secondary, tableText__color);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							a{
+								@include font-size(14);
+								@include lineheight(19);
+								color: color(primary, white);
+								font-family: font(poppins, family);
+								font-weight: font(poppins, weight-light);
+								text-transform: capitalize;
+								background-color: color(primary, green);
+								@include radius(30px);
+								padding-left: 25px;
+								position: relative;
+								margin-right: 15px;
+								&::after{
+									content: '\f06e';
+									font-family: "Font Awesome 5 Free"; 
+									font-weight: 900;
+									@include font-size(12);
+									position: absolute;
+									top: 6px;
+									left: 8px; 
+								}
+							}
+							button{
+								@include font-size(14);
+								@include lineheight(19);
+								color: color(primary, white);
+								font-family: font(poppins, family);
+								font-weight: font(poppins, weight-light);
+								text-transform: capitalize;
+								background-color: color(button, deactiveBtn_bg);
+								@include radius(20px);
+								padding-left: 25px;
+								position: relative;
+								&::after{
+									content: '\f06e';
+									font-family: "Font Awesome 5 Free"; 
+									font-weight: 900;
+									@include font-size(12);
+									position: absolute;
+									top: 6px;
+									left: 8px; 
+								}
+							}
+						}
+					}
+				}
+				
+			}
+			#subscriberList__table_info{
+				max-width: 50%;
+				flex: 0 0 50%;
+				@include font-size(12);
+				@include lineheight(18);
+				color: color(secondary, tableText__color);
+				font-family: font(poppins, family);
+				font-weight: font(poppins, weight-light);
+				text-transform: capitalize;
+			}
+			.dataTables_paginate {
+				max-width: 50%;
+				flex: 0 0 50%;
+				.pagination{
+					display: flex;
+					justify-content: end;
+					.page-item{
+						.page-link{
+							background: transparent;
+							@include font-size(12);
+							color: color(primary, lacquered_licorice);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							border: 1px solid color(primary, lacquered_licorice);
+							@include radius(50%);
+							padding: 0px;
+							width: 20px;
+							height: 20px;
+							display: block;
+							@include lineheight(20);
+							position: relative;
+							text-align: center;
+							box-sizing: content-box;
+						}
+						&.previous, &.next{
+							border: none;
+							background: transparent;
+							@include font-size(12);
+							@include lineheight(18);
+							color: color(primary, lacquered_licorice);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+							text-transform: capitalize;
+							display: inline-block;
+							
+							
+								.page-link{
+									border: 0;
+									width: auto;
+								}
+							
+						}
+					}
+					.page-item.active{
+						.page-link{
+							color: color(primary, white);
+							background-color: color(primary, login_header);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.subscriberDetails__content{
+	.subscriberProfile{
+		.card{
+			border: none;
+			box-shadow: none;
+			.card-body{
+				padding: 15px;
+				h3{
+					@include font-size(24);
+					@include lineheight(36);
+					color: color(primary, black);
+					font-family: font(poppins, family);
+					font-weight: font(poppins, weight-semibold);
+					text-transform: capitalize;
+					margin-bottom: 0px;
+				}
+				p{
+					@include font-size(16);
+					@include lineheight(24);
+					color: color(primary, black);
+					font-family: font(poppins, family);
+					font-weight: font(poppins, weight-light);
+					margin-bottom: 0px;
+				}
+				.list-group{
+					.list-group-item{
+						b{
+							@include font-size(16);
+							@include lineheight(24);
+							color: color(primary, black);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-medium);
+							i{
+								@include font-size(12);
+							}
+						}
+						a{
+							@include font-size(16);
+							@include lineheight(24);
+							color: color(primary, black);
+							font-family: font(poppins, family);
+							font-weight: font(poppins, weight-light);
+						}
+						.switch{
+							@include radius(25px);
+							.switch-group{
+								.switch-on{
+									background-color: color(primary, green);
+									border: 1px solid color(primary, green) !important;
+								}
+								.switch-off{
+									background-color: color(button, switch_incative_bg);
+									border: 1px solid color(button, switch_incative_bg) !important;
+									color: color(primary, white);
+								}
+								.switch-handle{
+									@include radius(50%);
+								}
+							}
+						}
+						.switch.btn-primary{
+							background-color: color(primary, green);
+							border-color: color(primary, green);
+						}
+					}
+				}
+			}
+		}
+	}
+	.subscriberInformation{
+		.card{
+			border: none;
+			box-shadow: none;
+			.card-header{
+				border: 0;
+				padding: 20px;
+				@include breakpoint(very-smal-mobiles){
+					padding: 20px 10px 10px 10px;
+				}
+				h2{
+					@include font-size(20);
+					@include lineheight(34);
+					color: color(secondary, dataTable_btnColor);
+					font-family: font(poppins, family);
+					font-weight: font(poppins, weight-semibold);
+					text-transform: uppercase;
+					margin-bottom: 0px;
+					@include breakpoint(very-smal-mobiles){
+						@include font-size(16);
+					}
+				}
+				#statsub{
+					a{
+						@include font-size(14);
+						@include lineheight(21);
+						color: color(primary, white);
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-light);
+						text-transform: capitalize;
+						@include breakpoint(very-smal-mobiles){
+							@include font-size(12);
+							font-weight: font(poppins, weight-regular);
+						}
+					}
+					.btn-success{
+						background-color: color(primary, green);
+						border: 0;
+					}
+					.btn-danger{
+						background-color: color(button, deactiveBtn_bg);
+						border: 0;
+					}
+				}
+			}
+			.card-body{
+				@include breakpoint(very-smal-mobiles){
+					padding: 0px 10px 20px 10px;
+				}
+				.username{
+					a{
+						@include font-size(16);
+						@include lineheight(24);
+						color: color(primary, black);
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-medium);
+					}
+				}
+				.description{
+					@include font-size(12);
+					@include lineheight(18);
+					color: color(primary, carbon_fiber);
+					font-family: font(poppins, family);
+					font-weight: font(poppins, weight-light);
+				}
+				p{
+					button{
+						@include font-size(14);
+						@include lineheight(21);
+						color: color(primary, white);
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-light);
+						background-color: color(primary, lightBlack);
+						border: 0;
+						@include breakpoint(ipad-potrait){
+							margin-top: 12px;
+						}
+						@include breakpoint(mobile-potrait){
+							margin-top: 12px;
+						}
+						@include breakpoint(very-smal-mobiles){
+							margin-top: 7px;
+							@include font-size(11);
+						}
+						
+						&:first-child{
+							background-color: color(secondary, lightblackrussian);
+						}
+						&:nth-child(2){
+							background-color: color(button, csv_excle_btnColor) !important;
+						}
+						&:nth-child(3){
+							background-color: color(primary, lightBlack) !important;
+						}
+					}
+				}
+				.joinDate{
+					h6{
+						@include font-size(16);
+						@include lineheight(24);
+						color: color(primary, black);
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-medium);
+						padding-right: 10px;
+						border-right: 1px solid color(secondary, lightblackrussian);
+						@include breakpoint(very-smal-mobiles){
+							@include font-size(13);
+						}
+					}
+				}
+				.prasentStatus{
+					h6{
+						@include font-size(16);
+						@include lineheight(24);
+						color: color(primary, black);
+						font-family: font(poppins, family);
+						font-weight: font(poppins, weight-medium);
+						padding-left: 10px;
+						@include breakpoint(very-smal-mobiles){
+							@include font-size(14);
+						}
+						span{
+							&:first-child{
+								color: color(primary, green) !important;
+							}
+							&:last-child{
+								color: color(button, deactiveBtn_bg) !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

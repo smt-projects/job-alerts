@@ -1,0 +1,203 @@
+
+.dashboard_header{
+    h1{
+        @include font-size(30);
+        @include lineheight(45);
+        color: color(primary, black);
+        font-family: font(poppins, family);
+        font-weight: font(poppins, weight-medium);
+        text-transform: capitalize;
+        margin-bottom: 0px;
+        text-align: left;
+    }
+    .breadcrumb{
+        li{
+            @include font-size(14);
+            @include lineheight(21);
+            color: color(primary, black);
+            font-family: font(poppins, family);
+            font-weight: font(poppins, weight-light);
+            text-transform: capitalize;
+            a{
+                color: color(primary, black);
+            }
+        }
+    }
+}
+
+.dashboardContent__section{
+    .dashboard__section{
+        .small-box{
+            .inner{
+                padding: 30px;
+                h3{
+                    @include font-size(60);
+                    @include lineheight(90);
+                    color: color(primary, white);
+                    font-family: font(poppins, family);
+				    font-weight: font(poppins, weight-regular);
+                    //text-transform: uppercase;
+                    //margin-bottom: 15px;
+                }
+                p{
+                    @include font-size(20);
+                    @include lineheight(30);
+                    color: color(primary, white);
+                    font-family: font(poppins, family);
+				    font-weight: font(poppins, weight-semibold);
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .boxInner_1{
+            background-color: color(button, csv_excle_btnColor) !important;
+            background: url(../../theme/dist/img/Mask-group.png) no-repeat center;
+            background-size: cover;
+        }
+        .boxInner_2{
+            background-color: color(secondary, lightblackrussian) !important;
+            background: url(../../theme/dist/img/Mask-group1.png) no-repeat center;
+            background-size: cover;
+        }
+        .boxInner_3{
+            background-color: color(primary, green) !important;
+            background: url(../../theme/dist/img/Mask-group2.png) no-repeat center;
+            background-size: cover;
+        }
+        .boxInner_4{
+            background-color: color(button, deactiveBtn_bg) !important;
+            background: url(../../theme/dist/img/Mask-group3.png) no-repeat center;
+            background-size: cover;
+        }
+    }
+    .two_col__section{
+        margin: 0px;
+        .subscriptionUnsubscription_graph{
+            .card{
+                padding: 15px;
+                .card-header{
+                    border-bottom: 0;
+                    .card-title{
+                        @include font-size(16);
+                        @include lineheight(34);
+                        color: color(primary, login_header);
+                        font-family: font(poppins, family);
+                        font-weight: font(poppins, weight-semibold);
+                        text-transform: uppercase;
+                    }
+                }
+                
+            }
+        }
+        .todaysUser__activity{
+            .card{
+                padding: 15px 15px 0 15px;
+               
+                .card-header{
+                    border-bottom: 0;
+                    .card-title{
+                        @include font-size(16);
+                        @include lineheight(34);
+                        color: color(primary, login_header);
+                        font-family: font(poppins, family);
+                        font-weight: font(poppins, weight-semibold);
+                        text-transform: uppercase;
+                    }
+                }
+                .card-body{
+                    padding: 15px 0 0 0;
+                    .box_section{
+                        position: relative;
+                        margin-bottom: 0;
+                        min-height: 198px;
+                        a{
+                            span{
+                                padding: 15px 20px;
+                                @include font-size(12);
+                                @include lineheight(34);
+                                font-family: font(poppins, family);
+                                font-weight: font(poppins, weight-regular);
+                                text-transform: capitalize;
+                            }
+                        }
+                        .box_1{
+                            position: absolute;
+                            top: 68px;
+                            left: 0px;
+                            span{
+                                background-color: color(primary, green) !important;
+                                color: color(primary, white);
+                                border-top-right-radius: 5px;
+                                border-top-left-radius: 5px;
+                                border-bottom-left-radius: 5px;
+                            }
+                        }
+                        .box_2{
+                            position: absolute;
+                            top: 0px;
+                            right: 15px;
+                            span{
+                                background-color: color(primary, yellow);
+                                color: color(primary, carbon_fiber);
+                                border-top-right-radius: 5px;
+                                border-top-left-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                            }
+                        }
+                        .box_3{
+                            position: absolute;
+                            top: 133px;
+                            right: 0px;
+                            span{
+                                background-color: color(button, deactiveBtn_bg);
+                                color: color(primary, white);
+                                border-top-right-radius: 5px;
+                                border-top-left-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                            }
+                        }
+                    }
+                }
+                .img_section{
+                    @include breakpoint(mobile-potrait){
+                    img{ width: 100%; height: auto;}
+                    }
+                }
+            }
+        }
+    }
+    .two_col__section_2{
+        .calender_box{
+            .card{
+                padding: 15px;
+                .card-header{
+                    border-bottom: 0;
+                    .card-title{
+                        @include font-size(16);
+                        @include lineheight(34);
+                        color: color(primary, login_header);
+                        font-family: font(poppins, family);
+                        font-weight: font(poppins, weight-semibold);
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        .emailAlert__graph{
+            .card{
+                padding: 15px;
+                .card-header{
+                    border-bottom: 0;
+                    .card-title{
+                        @include font-size(16);
+                        @include lineheight(34);
+                        color: color(primary, login_header);
+                        font-family: font(poppins, family);
+                        font-weight: font(poppins, weight-semibold);
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
