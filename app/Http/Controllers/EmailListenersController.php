@@ -1,5 +1,5 @@
 <?php 
-namespace App\Listeners;
+namespace App\Http\Controllers;
 
 use Illuminate\Mail\Events\MessageSent;
 
